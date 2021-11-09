@@ -1,17 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap");
-
-html,
-body {
-	padding: 0;
-	margin: 0;
-	scroll-behavior: smooth;
-}
-
-body * {
-	transition: 0.3s;
-}
-
 .linkk {
 	text-decoration: none;
 	color: #67b4ee;
@@ -20,61 +6,6 @@ body * {
 .linkk:hover {
 	text-decoration: none;
 	color: #0091ff;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong {
-	color: var(--mainText);
-	font-family: "Russo One", sans-serif;
-	font-weight: 500;
-}
-
-p,
-li,
-span,
-label,
-input,
-textarea {
-	color: var(--secondaryText);
-	font-family: "Roboto Mono", monospace;
-}
-
-a {
-	text-decoration: none;
-	color: #17a2b8;
-}
-
-ul {
-	list-style: none;
-}
-
-h1 {
-	font-size: 56px;
-}
-
-h2 {
-	font-size: 36px;
-}
-
-h3 {
-	font-size: 28px;
-}
-
-h4 {
-	font-size: 24px;
-}
-
-h5 {
-	font-size: 20px;
-}
-
-h6 {
-	font-size: 16px;
 }
 
 .s1 {
@@ -185,23 +116,6 @@ h6 {
 #theme-options-wrapper {
 	display: flex;
 	justify-content: center;
-}
-
-.theme-dot {
-	height: 30px;
-	width: 30px;
-	background-color: black;
-	border-radius: 50%;
-	margin: 5px;
-	border: 2px solid var(--themeDotBorder);
-	-webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-	box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-	cursor: pointer;
-}
-
-.theme-dot:hover {
-	border-width: 5px;
 }
 
 #light-mode {
@@ -368,17 +282,6 @@ h6 {
 	border-radius: 5px;
 	border: 1px solid var(--borderColor);
 	font-size: 14px;
-}
-
-#submit-btn {
-	margin-top: 10px;
-	cursor: pointer;
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: #fff;
-	background-color: var(--buttonColor);
-	border: none;
 }
 
 @media screen and (max-width: 1000px) {
