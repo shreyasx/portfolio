@@ -1,6 +1,4 @@
 import Head from "next/head";
-// import "../public/home.css";
-// import "../public/index.css";
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -8,7 +6,7 @@ function MyApp({ Component, pageProps }) {
 			<Head>
 				<meta
 					name="description"
-					content="Hardcore Full-Stack JavaScript Web Developer"
+					content="Hardcore Full-Stack JavaScript Web Developer."
 				/>
 			</Head>
 			<Component {...pageProps} />
