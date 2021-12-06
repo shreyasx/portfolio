@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Script from "next/script";
+import Image from "next/image";
 import React from "react";
 import axios from "axios";
 import Stack from "@mui/material/Stack";
@@ -141,11 +141,16 @@ export default function Home() {
 							</ul>
 						</div>
 						<div className={styles["left-column"]}>
-							<img
-								alt="Shrey"
-								id={styles.profile_pic}
-								src="/images/shrey.jpg"
-							/>
+							<div id={styles.profile_pic}>
+								<Image
+									alt="Shrey"
+									placeholder="blur"
+									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+									src="/images/shrey.jpg"
+									width={200}
+									height={200}
+								/>
+							</div>
 							<h5 style={{ textAlign: "center", lineHeight: 0 }}>
 								Pick your Theme.
 							</h5>
@@ -237,7 +242,7 @@ export default function Home() {
 							</div>
 						</div>
 						<div className={styles["social-links"]}>
-							<img alt="work" id={styles.social_img} src="/images/work.webp" />
+							<img id={styles.social_img} alt="work" src="/images/work.webp" />
 						</div>
 					</div>
 				</div>
