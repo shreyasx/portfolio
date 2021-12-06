@@ -242,7 +242,15 @@ export default function Home() {
 							</div>
 						</div>
 						<div className={styles["social-links"]}>
-							<img id={styles.social_img} alt="work" src="/images/work.webp" />
+							<Image
+								height={450}
+								width={700}
+								layout="responsive"
+								placeholder="blur"
+								blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+								alt="work"
+								src="/images/work.webp"
+							/>
 						</div>
 					</div>
 				</div>
@@ -253,7 +261,14 @@ export default function Home() {
 					<div className={styles["post-wrapper"]}>
 						<div>
 							<div className={styles.post}>
-								<img className={styles.thumbnail} src="/images/xtreme.png" />
+								<div className={styles.thumbnail}>
+									<Image
+										height={180}
+										width={318}
+										alt="thumbnail"
+										src="/images/xtreme.png"
+									/>
+								</div>
 								<div className={styles["post-preview"]}>
 									<h6 className={styles["post-title"]}>XTREME Gameshop</h6>
 									<p className={styles["post-intro"]}>
@@ -268,7 +283,14 @@ export default function Home() {
 						</div>
 						<div>
 							<div className={styles.post}>
-								<img className={styles.thumbnail} src="/images/logod.png" />
+								<div className={styles.thumbnail}>
+									<Image
+										height={180}
+										width={318}
+										alt="thumbnail"
+										src="/images/logod.png"
+									/>
+								</div>
 								<div className={styles["post-preview"]}>
 									<h6 className={styles["post-title"]}>Logo Designer</h6>
 									<p className={styles["post-intro"]}>
@@ -283,7 +305,14 @@ export default function Home() {
 						</div>
 						<div>
 							<div className={styles.post}>
-								<img className={styles.thumbnail} src="/images/rem.png" />
+								<div className={styles.thumbnail}>
+									<Image
+										height={180}
+										width={318}
+										alt="thumbnail"
+										src="/images/rem.png"
+									/>
+								</div>
 								<div className={styles["post-preview"]}>
 									<h6 className={styles["post-title"]}>Reminders & Todos</h6>
 									<p className={styles["post-intro"]}>
