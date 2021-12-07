@@ -266,6 +266,8 @@ export default function Home() {
 										height={180}
 										width={318}
 										alt="thumbnail"
+                    placeholder="blur"
+									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 										src="/images/xtreme.png"
 									/>
 								</div>
@@ -288,6 +290,8 @@ export default function Home() {
 										height={180}
 										width={318}
 										alt="thumbnail"
+                    placeholder="blur"
+									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 										src="/images/logod.png"
 									/>
 								</div>
@@ -310,6 +314,8 @@ export default function Home() {
 										height={180}
 										width={318}
 										alt="thumbnail"
+                    placeholder="blur"
+									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 										src="/images/rem.png"
 									/>
 								</div>
