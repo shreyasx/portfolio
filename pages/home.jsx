@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import styles from "../styles/home.module.css";
+import StripeCheckout from "react-stripe-checkout";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -383,14 +384,14 @@ export default function Home() {
 			<section className={styles.s1}>
 				<div className={styles["main-container"]}>
 					<h3>Donate now to support my work!</h3>
-					{/* <StripeCheckout
-								stripeKey={process.env.REACT_APP_STRIPE_KEY}
-								token={handleToken}
-								amount={getPrice() * 100}
-								name="Products"
-								billingAddress
-								shippingAddress
-							/> */}
+					<StripeCheckout
+						stripeKey={`pk_live_51IBXOSJZ5SfvqGzXBKuiDHbnxJjGJNoqZS6IJ2NeO0icsQ9peWyO9cSgiSESfUTwdpL4zhRlB7GUNIHclrVKpp66006LCfTM6j`}
+						token={handleToken}
+						amount={getPrice() * 100}
+						name="Products"
+						billingAddress
+						shippingAddress
+					/>
 				</div>
 			</section>
 		</div>
