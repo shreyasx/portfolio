@@ -1,12 +1,13 @@
 import initDB from "../../helpers/mongo";
-const Record = require("../../models/record");
+import Record from "../../models/Record";
 
 initDB();
 
 export default async function save(req, res) {
 	if (req.method == "POST") {
 		try {
-			const rec = new Record(req.body);
+			const { data } = req.body;
+			const rec = new Record(data);
 			await rec.save();
 			res.json({ success: true });
 		} catch (e) {

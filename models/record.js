@@ -1,13 +1,13 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const RecordSchema = new mongoose.Schema(
+const recordSchema = new mongoose.Schema(
 	{
 		name: { type: String, required: true },
 		email: { type: String, required: true },
 		amount: { type: Number, required: true },
-		comments: { type: String, required: true },
+		comments: { type: String, default: "" },
 	},
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model("Record", RecordSchema);
+export default mongoose.models.Record || mongoose.model("Record", recordSchema);
