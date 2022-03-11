@@ -1,33 +1,13 @@
 import Head from "next/head";
 import React from "react";
-import StripeCheckout from "react-stripe-checkout";
-import axios from "axios";
+import { useRouter } from "next/router";
 
 const Donate = () => {
-	const [amount, setAmount] = React.useState(0);
-	const [name, setName] = React.useState("");
-	const [email, setEmail] = React.useState("");
+	const router = useRouter();
+	const [amount, setAmount] = React.useState(69);
+	const [name, setName] = React.useState("asd");
+	const [email, setEmail] = React.useState("asd@f.com");
 	const [comments, setComments] = React.useState("");
-
-	React.useEffect(() => {
-		console.log({ amount, name, email, comments });
-	}, [amount, name, email, comments]);
-
-	async function handleToken(token) {
-		try {
-			const response = await axios.post(`http://localhost:3000/api/checkout`, {
-				token,
-				amount,
-			});
-			if (response.data.success) {
-				console.log("success");
-			} else {
-				console.log("no success");
-			}
-		} catch (er) {
-			console.log(er);
-		}
-	}
 
 	return (
 		<>
@@ -208,7 +188,7 @@ const Donate = () => {
 										className="form-textbox validate[required, Numeric]"
 										id="input_37_donation"
 										onChange={e => {
-											setAmount(e.target.value);
+											setAmount(parseInt(e.target.value) * 100);
 										}}
 									/>
 									<label
@@ -227,33 +207,19 @@ const Donate = () => {
 									data-align="auto"
 									className="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"
 								>
-									{amount >= 50 && email !== "" && name !== "" ? (
-										<StripeCheckout
-											stripeKey={`pk_test_51IBXOSJZ5SfvqGzXiCyNg9KYR752jDXw1VmT0ZZJk4TtGnh0uioNCnLYWj1RMLPExNgyc5Py80yvr5zprsFQCdTp00MgYD5aGu`}
-											token={handleToken}
-											currency="inr"
-											amount={amount * 100}
-											email={email}
-											name="DONATION"
-											description="To Shreyas Jamkhandi"
-											panelLabel="Donate"
-											image="https://shreyasjamkhandi.tech/nextimg/%2Fimages%2Fshrey.jpg/640/75?url=%2Fimages%2Fshrey.jpg&w=640&q=75"
-										>
-											<button
-												id="input_14"
-												className="form-submit-button form-submit-button-simple_rose submit-button jf-form-buttons jsTest-submitField"
-											>
-												{`Let's go to pay`}
-											</button>
-										</StripeCheckout>
-									) : (
-										<button
-											id="input_14"
-											className="form-submit-button form-submit-button-simple_rose submit-button jf-form-buttons jsTest-submitField"
-										>
-											{`Fill out all the necessary details to pay!`}
-										</button>
-									)}
+									<button
+										onClick={() => {
+											sessionStorage.setItem(
+												"data",
+												JSON.stringify({ name, email, comments, amount })
+											);
+											router.push({ pathname: "/checkout" });
+										}}
+										id="input_14"
+										className="form-submit-button form-submit-button-simple_rose submit-button jf-form-buttons jsTest-submitField"
+									>
+										{`Go to the payment page ->`}
+									</button>
 								</div>
 							</div>
 						</li>
