@@ -4,13 +4,17 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/CheckoutForm";
 import axios from "axios";
 import baseUrl from "../helpers/api";
+import { useRouter } from "next/router";
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE);
+const stripePromise = loadStripe(
+	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_TEST
+);
 
 export default function App() {
+	const router = useRouter();
 	let amount;
 	if (typeof sessionStorage !== "undefined")
-		amount = JSON.parse(sessionStorage.getItem("data")).amount;
+		amount = JSON.parse(sessionStorage.getItem("data"))?.amount;
 	const [clientSecret, setClientSecret] = useState("");
 	useEffect(() => {
 		(async () => {
@@ -23,6 +27,10 @@ export default function App() {
 
 	const appearance = { theme: "stripe" };
 	const options = { clientSecret, appearance };
+
+	React.useEffect(() => {
+		if (!amount) router.push({ pathname: "/checkout" });
+	}, [amount, router]);
 
 	return (
 		<div
