@@ -4,15 +4,32 @@ import { useRouter } from "next/router";
 
 const Donate = () => {
 	const router = useRouter();
-	const [amount, setAmount] = React.useState(69);
-	const [name, setName] = React.useState("asd");
-	const [email, setEmail] = React.useState("asd@f.com");
+	const [amount, setAmount] = React.useState(0);
+	const [name, setName] = React.useState("");
+	const [email, setEmail] = React.useState("");
 	const [comments, setComments] = React.useState("");
+	const [error, setError] = React.useState("");
+
+	const handleSubmit = () => {
+		if (name === "" && email === "") {
+			setError(
+				"Ensure all required fields are filled correctly before proceeding."
+			);
+		} else if (amount / 100 < 50) {
+			setError("Amount must be at least 50 Rupees.");
+		} else {
+			sessionStorage.setItem(
+				"data",
+				JSON.stringify({ name, email, comments, amount })
+			);
+			router.push({ pathname: "/checkout" });
+		}
+	};
 
 	return (
 		<>
 			<Head>
-				<title>Donation Page</title>
+				<title>Donations</title>
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="stylesheet" href="/donate.css" />
 				<link
@@ -202,19 +219,18 @@ const Donate = () => {
 							</div>
 						</li>
 						<li className="form-line" data-type="control_button" id="id_14">
+							{error && (
+								<p style={{ color: "red", width: "100%", textAlign: "center" }}>
+									{error}
+								</p>
+							)}
 							<div id="cid_14" className="form-input-wide" data-layout="full">
 								<div
 									data-align="auto"
 									className="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"
 								>
 									<button
-										onClick={() => {
-											sessionStorage.setItem(
-												"data",
-												JSON.stringify({ name, email, comments, amount })
-											);
-											router.push({ pathname: "/checkout" });
-										}}
+										onClick={handleSubmit}
 										id="input_14"
 										className="form-submit-button form-submit-button-simple_rose submit-button jf-form-buttons jsTest-submitField"
 									>
