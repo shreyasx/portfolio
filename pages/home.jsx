@@ -380,19 +380,6 @@ export default function Home() {
 					</form>
 				</div>
 			</section>
-			<section className={styles.s1}>
-				<div className={styles["main-container"]}>
-					<h3>Donate now to support my work!</h3>
-					<StripeCheckout
-						stripeKey={`pk_live_51IBXOSJZ5SfvqGzXBKuiDHbnxJjGJNoqZS6IJ2NeO0icsQ9peWyO9cSgiSESfUTwdpL4zhRlB7GUNIHclrVKpp66006LCfTM6j`}
-						token={handleToken}
-						amount={getPrice() * 100}
-						name="Products"
-						billingAddress
-						shippingAddress
-					/>
-				</div>
-			</section>
 		</div>
 	);
 }
