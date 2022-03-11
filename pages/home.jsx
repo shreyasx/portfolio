@@ -6,7 +6,6 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import styles from "../styles/home.module.css";
-import StripeCheckout from "react-stripe-checkout";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
