@@ -40,14 +40,12 @@ export default function CheckoutForm() {
 		stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
 			switch (paymentIntent.status) {
 				case "succeeded":
+					const data = JSON.parse(sessionStorage.getItem("data"));
+					data.amount /= 100;
 					setOpen(true);
-					axios
-						.post(`${baseUrl}/api/save`, {
-							data: JSON.parse(sessionStorage.getItem("data")),
-						})
-						.then(resp => {
-							if (resp.data.success) sessionStorage.removeItem("data");
-						});
+					axios.post(`${baseUrl}/api/save`, { data }).then(resp => {
+						if (resp.data.success) sessionStorage.removeItem("data");
+					});
 					break;
 				case "processing":
 					setMessage("Your payment is processing.");
