@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import axios from "axios";
 import Stack from "@mui/material/Stack";
@@ -341,14 +342,10 @@ export default function Home() {
 				<div className={styles["main-container"]}>
 					<a href=""></a>
 					<h3 id="contact-form" style={{ textAlign: "center" }}>
-						Get In Touch
+						{`Get In Touch or `}
+						<Link href="/donate">{`Leave a Donation.`}</Link>
 					</h3>
-					<form
-						onSubmit={onSubmit}
-						// action="https://shreyas-saver.herokuapp.com/save"
-						// method="post"
-						id={styles["contact-form"]}
-					>
+					<form onSubmit={onSubmit} id={styles["contact-form"]}>
 						<label>Name</label>
 						<input
 							className={styles["input-field"]}

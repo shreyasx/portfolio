@@ -213,7 +213,7 @@ const Donate = () => {
 										htmlFor="input_37_donation"
 										style={{ minHeight: "13px" }}
 									>
-										Donation Amount
+										{`Make sure it's more than Rs. 50 :)`}
 									</label>
 								</span>
 							</div>
