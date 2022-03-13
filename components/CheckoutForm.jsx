@@ -5,18 +5,20 @@ import loading from "../public/images/loading.gif";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import axios from "axios";
+import { useRouter } from "next/router";
 import {
 	PaymentElement,
 	useStripe,
 	useElements,
 } from "@stripe/react-stripe-js";
-import axios from "axios";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 export default function CheckoutForm() {
+	const router = useRouter();
 	const stripe = useStripe();
 	const elements = useElements();
 	const [message, setMessage] = useState(null);
@@ -37,15 +39,20 @@ export default function CheckoutForm() {
 
 		if (!clientSecret) return;
 
+		const handleSucceeded = () => {
+			const data = JSON.parse(sessionStorage.getItem("data"));
+			data.amount /= 100;
+			setOpen(true);
+			axios.post(`${baseUrl}/api/save`, { data }).then(resp => {
+				if (resp.data.success) sessionStorage.removeItem("data");
+			});
+			setTimeout(() => router.push("/home"), 2500);
+		};
+
 		stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
 			switch (paymentIntent.status) {
 				case "succeeded":
-					const data = JSON.parse(sessionStorage.getItem("data"));
-					data.amount /= 100;
-					setOpen(true);
-					axios.post(`${baseUrl}/api/save`, { data }).then(resp => {
-						if (resp.data.success) sessionStorage.removeItem("data");
-					});
+					handleSucceeded();
 					break;
 				case "processing":
 					setMessage("Your payment is processing.");
@@ -60,7 +67,7 @@ export default function CheckoutForm() {
 					break;
 			}
 		});
-	}, [stripe]);
+	}, [stripe, router]);
 
 	const handleSubmit = async e => {
 		e.preventDefault();

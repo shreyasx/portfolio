@@ -6,9 +6,7 @@ import axios from "axios";
 import baseUrl from "../helpers/api";
 import { useRouter } from "next/router";
 
-const stripePromise = loadStripe(
-	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_TEST
-);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE);
 
 export default function App() {
 	const router = useRouter();
