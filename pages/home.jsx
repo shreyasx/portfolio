@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import axios from "axios";
 import Stack from "@mui/material/Stack";
@@ -233,8 +234,8 @@ export default function Home() {
 									<li>PHP/Laravel</li>
 								</ul>
 								<ul>
-									<li>NodeJS</li>
-									<li>ExpressJS</li>
+									<li>NodeJS/ExpressJS</li>
+									<li>Realtime WebApps</li>
 									<li>AWS (RDS/S3)</li>
 									<li>MongoDB</li>
 									<li>MySQL/PostgreSQL</li>
@@ -266,8 +267,8 @@ export default function Home() {
 										height={180}
 										width={318}
 										alt="thumbnail"
-                    placeholder="blur"
-									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+										placeholder="blur"
+										blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 										src="/images/xtreme.png"
 									/>
 								</div>
@@ -290,8 +291,8 @@ export default function Home() {
 										height={180}
 										width={318}
 										alt="thumbnail"
-                    placeholder="blur"
-									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+										placeholder="blur"
+										blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 										src="/images/logod.png"
 									/>
 								</div>
@@ -314,8 +315,8 @@ export default function Home() {
 										height={180}
 										width={318}
 										alt="thumbnail"
-                    placeholder="blur"
-									blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+										placeholder="blur"
+										blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 										src="/images/rem.png"
 									/>
 								</div>
@@ -340,13 +341,11 @@ export default function Home() {
 			<section className={styles.s2}>
 				<div className={styles["main-container"]}>
 					<a href=""></a>
-					<h3 style={{ textAlign: "center" }}>Get In Touch</h3>
-					<form
-						onSubmit={onSubmit}
-						// action="https://shreyas-saver.herokuapp.com/save"
-						// method="post"
-						id={styles["contact-form"]}
-					>
+					<h3 id="contact-form" style={{ textAlign: "center" }}>
+						{`Get In Touch or `}
+						<Link href="/donate">{`Leave a Donation.`}</Link>
+					</h3>
+					<form onSubmit={onSubmit} id={styles["contact-form"]}>
 						<label>Name</label>
 						<input
 							className={styles["input-field"]}

@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
 			<Head>
 				<meta
 					name="description"
-					content="Hardcore Full-Stack JavaScript Web Developer."
+					content="Hardcore Full-Stack JavaScript Web Dev."
 				/>
 			</Head>
 			<Component {...pageProps} />
