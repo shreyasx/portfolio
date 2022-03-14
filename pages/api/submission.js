@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import Submission from "../../models/Submission";
 import initDB from "../../helpers/mongo";
+import moment from "moment-timezone";
 
 initDB();
 
@@ -15,7 +16,7 @@ const transporter = nodemailer.createTransport({
 export default async function save(req, res) {
 	if (req.method == "POST") {
 		try {
-			const sub = new Submission(req.body);
+			const sub = new Submission({ ...req.body, date: getTime() });
 			await sub.save();
 			transporter.sendMail(
 				{
@@ -43,4 +44,9 @@ export default async function save(req, res) {
 			console.log(e);
 		}
 	}
+}
+
+function getTime() {
+	const date = moment().tz("Asia/Calcutta").format("MMMM Do YYYY, h:mm:ss a");
+	return date;
 }

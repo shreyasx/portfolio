@@ -6,22 +6,10 @@ const donationSchema = new mongoose.Schema(
 		email: { type: String, required: true },
 		amount: { type: Number, required: true },
 		comments: { type: String, default: "" },
-		date: { type: String, default: getTime() },
+		date: { type: String, required: true },
 	},
-	{ timestamps: true }
+	{ timestamps: false }
 );
-
-function getTime() {
-	const currentTime = new Date();
-	const currentOffset = currentTime.getTimezoneOffset();
-	const ISTOffset = 330;
-	const ISTTime = new Date(
-		currentTime.getTime() + (ISTOffset + currentOffset) * 60000
-	)
-		.toGMTString()
-		.split(" G")[0];
-	return ISTTime;
-}
 
 export default mongoose.models.Donation ||
 	mongoose.model("Donation", donationSchema);

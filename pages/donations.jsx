@@ -31,6 +31,9 @@ const Donations = ({ donations }) => {
 						<span style={{ padding: "5px 0", display: "block" }}>
 							<strong>Amount:</strong> {`Rs. ${donation.amount}`}
 						</span>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>When:</strong> {donation.date}
+						</span>
 						{donation.comments !== "" && (
 							<span style={{ padding: "5px 0", display: "block" }}>
 								<strong>Comments:</strong>{" "}

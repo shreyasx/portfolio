@@ -38,6 +38,9 @@ const Submissions = ({ subs }) => {
 							<strong>From:</strong> {`${sub.name} (${sub.email})`}
 						</span>
 						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>When:</strong> {sub.date}
+						</span>
+						<span style={{ padding: "5px 0", display: "block" }}>
 							<strong>Subject:</strong> {sub.subject}
 						</span>
 						<span style={{ padding: "5px 0", display: "block" }}>
