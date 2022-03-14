@@ -1,49 +1,46 @@
 import axios from "axios";
-import Head from "next/head";
 import baseUrl from "../helpers/api";
+import Head from "next/head";
 
 const Submissions = ({ subs }) => {
 	return (
 		<>
-			{subs.map((sub, index) => {
-				return (
-					<div key={index} className="accordion" id="accordionExample">
-						<div className="card">
-							<div className="card-header" id={`heading${index}`}>
-								<h5 className="mb-0">
-									<button
-										className="btn btn-link collapsed"
-										type="button"
-										data-toggle="collapse"
-										data-target={`#collapse${index}`}
-										aria-expanded="false"
-										aria-controls={`collapse${index}`}
-									>
-										From: {sub.name}, on {sub.createdAt}
-										<button className="btn btn-outline-danger">
-											Delete permanently
-										</button>
-									</button>
-								</h5>
-							</div>
-							<div
-								id={`collapse${index}`}
-								className="collapse"
-								aria-labelledby={`heading${index}`}
-								data-parent="#accordionExample"
-							>
-								<div className="card-body">
-									Subject: {sub.subject} <br />
-									Email: {sub.email} <br />
-									Message:{" "}
-									<span style={{ whiteSpace: "pre-wrap" }}>{sub.message}</span>
-									<br />
-								</div>
-							</div>
-						</div>
+			<Head>
+				<title>Submissions</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<div
+				style={{
+					maxWidth: "800px",
+					margin: "0 auto",
+					fontFamily: "sans-serif",
+				}}
+			>
+				<h1>Form submissions</h1>
+				{subs.map((sub, index) => (
+					<div
+						style={{
+							borderBottom: "3px solid black",
+							padding: 10,
+						}}
+						key={index}
+					>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>From:</strong> {`${sub.name} (${sub.email})`}
+						</span>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>Subject:</strong> {sub.subject}
+						</span>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>Message:</strong>{" "}
+							<span style={{ whiteSpace: "pre-wrap" }}>{sub.message}</span>
+						</span>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<button>{`Delete ${sub._id}`}</button>
+						</span>
 					</div>
-				);
-			})}
+				))}
+			</div>
 		</>
 	);
 };
@@ -51,11 +48,11 @@ const Submissions = ({ subs }) => {
 export default Submissions;
 
 export async function getServerSideProps(ctx) {
-	// const cookie = ctx.req?.headers?.cookie;
-	// if (!cookie) return { redirect: { permanent: false, destination: "/" } };
+	const cookie = ctx.req?.headers?.cookie;
+	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
 	try {
 		const resp = await axios.post(`${baseUrl}/api/submissions`, {
-			// headers: { cookie },
+			headers: { cookie },
 		});
 		return { props: { subs: resp.data } };
 	} catch (err) {

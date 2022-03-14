@@ -5,8 +5,11 @@ import CheckoutForm from "../components/CheckoutForm";
 import axios from "axios";
 import baseUrl from "../helpers/api";
 import { useRouter } from "next/router";
+import Head from "next/dist/shared/lib/head";
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE);
+const stripePromise = loadStripe(
+	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_TEST
+);
 
 export default function App() {
 	const router = useRouter();
@@ -31,21 +34,27 @@ export default function App() {
 	}, [amount, router]);
 
 	return (
-		<div
-			style={{
-				maxWidth: "800px",
-				margin: "auto",
-				padding: 45,
-			}}
-		>
-			{clientSecret && (
-				<>
-					<h1>{`Payment of Rs. ${amount / 100}`}</h1>
-					<Elements options={options} stripe={stripePromise}>
-						<CheckoutForm />
-					</Elements>
-				</>
-			)}
-		</div>
+		<>
+			<Head>
+				<title>Checkout page</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<div
+				style={{
+					maxWidth: "800px",
+					margin: "auto",
+					padding: 45,
+				}}
+			>
+				{clientSecret && (
+					<>
+						<h1>{`Payment of Rs. ${amount / 100}`}</h1>
+						<Elements options={options} stripe={stripePromise}>
+							<CheckoutForm />
+						</Elements>
+					</>
+				)}
+			</div>
+		</>
 	);
 }

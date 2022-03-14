@@ -1,10 +1,10 @@
 import Donation from "../../models/Donation";
 import initDB from "../../helpers/mongo";
-import authenticated from "../../middlewares/auth";
+import { authenticated } from "../../middlewares/auth";
 
 initDB();
 
-export default authenticated(async function save(req, res) {
+export default authenticated(async function fn(req, res) {
 	if (req.method == "POST") {
 		try {
 			const data = await Donation.find();

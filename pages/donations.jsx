@@ -1,56 +1,47 @@
 import axios from "axios";
-import Head from "next/head";
 import baseUrl from "../helpers/api";
+import Head from "next/head";
 
 const Donations = ({ donations }) => {
-	console.log(donations);
 	return (
 		<>
 			<Head>
-				<link
-					rel="stylesheet"
-					href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-					integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-				></link>
+				<title>Donations</title>
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{donations.map((donation, index) => {
-				return (
-					<div key={index} className="accordion" id="accordionExample">
-						<div className="card">
-							<div className="card-header" id={`heading${index}`}>
-								<h5 className="mb-0">
-									<button
-										className="btn btn-link collapsed"
-										type="button"
-										data-toggle="collapse"
-										data-target={`#collapse${index}`}
-										aria-expanded="false"
-										aria-controls={`collapse${index}`}
-									>
-										From: {donation.name}, Rs. {sub.amount.toString()}
-									</button>
-								</h5>
-							</div>
-							<div
-								id={`collapse${index}`}
-								className="collapse"
-								aria-labelledby={`heading${index}`}
-								data-parent="#accordionExample"
-							>
-								<div className="card-body">
-									Email: {donation.email} <br />
-									Date: {donation.date} <br />
-									Comments:{` `} <br />
-									<span style="white-space: pre-wrap;">
-										{donation.comments}
-									</span>
-									<br />
-								</div>
-							</div>
-						</div>
+			<div
+				style={{
+					maxWidth: "800px",
+					margin: "0 auto",
+					fontFamily: "sans-serif",
+				}}
+			>
+				<h1>Donations made</h1>
+				{donations.map((donation, index) => (
+					<div
+						style={{
+							borderBottom: "3px solid black",
+							padding: 10,
+						}}
+						key={index}
+					>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>From:</strong> {`${donation.name} (${donation.email})`}
+						</span>
+						<span style={{ padding: "5px 0", display: "block" }}>
+							<strong>Amount:</strong> {`Rs. ${donation.amount}`}
+						</span>
+						{donation.comments !== "" && (
+							<span style={{ padding: "5px 0", display: "block" }}>
+								<strong>Comments:</strong>{" "}
+								<span style={{ whiteSpace: "pre-wrap" }}>
+									{donation.comments}
+								</span>
+							</span>
+						)}
 					</div>
-				);
-			})}
+				))}
+			</div>
 		</>
 	);
 };
@@ -61,7 +52,7 @@ export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
 	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
 	try {
-		const resp = await axios.get(`${baseUrl}/api/donations`, {
+		const resp = await axios.post(`${baseUrl}/api/donations`, {
 			headers: { cookie },
 		});
 		return { props: { donations: resp.data } };
