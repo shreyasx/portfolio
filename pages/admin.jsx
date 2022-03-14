@@ -136,6 +136,7 @@ const Admin = () => {
 							<div>
 								<input
 									name="choice"
+									style={{ marginRight: 8 }}
 									defaultChecked={true}
 									onChange={event => {
 										if (event.target.checked) setChoice("submissions");
@@ -148,6 +149,7 @@ const Admin = () => {
 							<div>
 								<input
 									name="choice"
+									style={{ marginRight: 8 }}
 									onChange={event => {
 										if (event.target.checked) setChoice("donations");
 									}}
@@ -190,6 +192,7 @@ export default Admin;
 
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
-	if (cookie) return { redirect: { permanent: false, destination: "/" } };
+	if (cookie)
+		return { redirect: { permanent: false, destination: "/submissions" } };
 	else return { props: {} };
 }

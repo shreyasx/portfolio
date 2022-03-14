@@ -1,6 +1,7 @@
 import axios from "axios";
 import baseUrl from "../helpers/api";
 import Head from "next/head";
+import { useRouter } from "next/dist/client/router";
 
 const handleDelete = async id => {
 	try {
@@ -12,6 +13,17 @@ const handleDelete = async id => {
 };
 
 const Submissions = ({ subs }) => {
+	const router = useRouter();
+
+	const handleLogout = async () => {
+		try {
+			await axios.get(`${baseUrl}/api/logout`);
+			router.push({ pathname: "/" });
+		} catch (e) {
+			console.log("Couldn't logout.");
+		}
+	};
+
 	return (
 		<>
 			<Head>
@@ -52,6 +64,19 @@ const Submissions = ({ subs }) => {
 						</span>
 					</div>
 				))}
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "space-evenly",
+						maxWidth: 500,
+						margin: "20px auto",
+					}}
+				>
+					<button onClick={handleLogout}>Logout</button>
+					<button onClick={() => router.push({ pathname: "/donations" })}>
+						View Donations
+					</button>
+				</div>
 			</div>
 		</>
 	);
@@ -62,7 +87,7 @@ export default Submissions;
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
 	const headers = { cookie };
-	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
+	if (!cookie) return { redirect: { permanent: false, destination: "/admin" } };
 	try {
 		const resp = await axios.get(`${baseUrl}/api/submissions`, { headers });
 		return { props: { subs: resp.data } };

@@ -1,8 +1,20 @@
 import axios from "axios";
 import baseUrl from "../helpers/api";
 import Head from "next/head";
+import { useRouter } from "next/dist/client/router";
 
 const Donations = ({ donations }) => {
+	const router = useRouter();
+
+	const handleLogout = async () => {
+		try {
+			await axios.get(`${baseUrl}/api/logout`);
+			router.push({ pathname: "/" });
+		} catch (e) {
+			console.log("Couldn't logout.");
+		}
+	};
+
 	return (
 		<>
 			<Head>
@@ -44,6 +56,19 @@ const Donations = ({ donations }) => {
 						)}
 					</div>
 				))}
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "space-evenly",
+						maxWidth: 500,
+						margin: "20px auto",
+					}}
+				>
+					<button onClick={handleLogout}>Logout</button>
+					<button onClick={() => router.push({ pathname: "/submissions" })}>
+						View Submissions
+					</button>
+				</div>
 			</div>
 		</>
 	);
@@ -54,7 +79,7 @@ export default Donations;
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
 	const headers = { cookie };
-	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
+	if (!cookie) return { redirect: { permanent: false, destination: "/admin" } };
 	try {
 		const resp = await axios.get(`${baseUrl}/api/donations`, { headers });
 		return { props: { donations: resp.data } };
