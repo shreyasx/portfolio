@@ -7,6 +7,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import styles from "../styles/home.module.css";
+import baseUrl from "../helpers/api";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -53,32 +54,18 @@ export default function Home() {
 		}
 	};
 
-	React.useEffect(() => {
-		checkTheme();
-		(async () => {
-			try {
-				await axios.get("https://form-submissions.herokuapp.com");
-				console.log("Wake-up shot fired!");
-			} catch (e) {
-				console.error(e);
-				console.log("Wake-up shot couldn't be fired!");
-			}
-		})();
-	}, []);
+	React.useEffect(checkTheme, []);
 
 	const onSubmit = async event => {
 		event.preventDefault();
 		const btn = document.getElementById("submit-btn");
 		btn.value = "Loading...";
-		const resp = await axios.post(
-			"https://form-submissions.herokuapp.com/save",
-			{
-				name: document.getElementById("name").value,
-				email: document.getElementById("email").value,
-				subject: document.getElementById("subject").value,
-				message: document.getElementById("message").value,
-			}
-		);
+		const resp = await axios.post(`${baseUrl}/api/submission`, {
+			name: document.getElementById("name").value,
+			email: document.getElementById("email").value,
+			subject: document.getElementById("subject").value,
+			message: document.getElementById("message").value,
+		});
 		btn.value = "Send";
 		if (resp.data.success) {
 			document.getElementById("name").value = null;
@@ -351,11 +338,13 @@ export default function Home() {
 							className={styles["input-field"]}
 							type="text"
 							id={"name"}
+							defaultValue="asdkfhbwef"
 							required
 						/>
 						<label>Subject</label>
 						<input
 							required
+							defaultValue="asdkfhbwef"
 							className={styles["input-field"]}
 							type="text"
 							id={"subject"}
@@ -364,6 +353,7 @@ export default function Home() {
 						<input
 							className={styles["input-field"]}
 							required
+							defaultValue="asdkfhbwef@df.com"
 							type="email"
 							id={"email"}
 						/>
@@ -371,6 +361,7 @@ export default function Home() {
 						<textarea
 							className={styles["input-field"]}
 							required
+							defaultValue="asdkfhbwef"
 							id={"message"}
 						></textarea>
 						<input id={"submit-btn"} type="submit" value="Send" />

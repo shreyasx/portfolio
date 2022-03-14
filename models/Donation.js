@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const recordSchema = new mongoose.Schema(
+const donationSchema = new mongoose.Schema(
 	{
 		name: { type: String, required: true },
 		email: { type: String, required: true },
@@ -21,4 +21,5 @@ function getTime() {
 	return ISTTime;
 }
 
-export default mongoose.models.Record || mongoose.model("Record", recordSchema);
+export default mongoose.models.Donation ||
+	mongoose.model("Donation", donationSchema);
