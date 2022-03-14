@@ -50,11 +50,10 @@ export default Donations;
 
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
+	const headers = { cookie };
 	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
 	try {
-		const resp = await axios.post(`${baseUrl}/api/donations`, {
-			headers: { cookie },
-		});
+		const resp = await axios.get(`${baseUrl}/api/donations`, { headers });
 		return { props: { donations: resp.data } };
 	} catch (err) {
 		console.log(err);

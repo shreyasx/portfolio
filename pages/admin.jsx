@@ -8,7 +8,7 @@ const Admin = () => {
 	const [username, setName] = React.useState("");
 	const [password, setPass] = React.useState("");
 	const [error, setError] = React.useState(false);
-	const [choice, setChoice] = React.useState("donations");
+	const [choice, setChoice] = React.useState("submissions");
 	const router = useRouter();
 
 	const handleSubmit = async () => {
@@ -125,6 +125,38 @@ const Admin = () => {
 								</div>
 							</div>
 						</li>
+						<li
+							style={{
+								margin: "20px 0",
+								justifyContent: "space-evenly",
+								display: "flex",
+								width: "100%",
+							}}
+						>
+							<div>
+								<input
+									name="choice"
+									defaultChecked={true}
+									onChange={event => {
+										if (event.target.checked) setChoice("submissions");
+									}}
+									type="radio"
+									id="choice_s"
+								/>
+								<label htmlFor="choice_s">Submissions</label>
+							</div>
+							<div>
+								<input
+									name="choice"
+									onChange={event => {
+										if (event.target.checked) setChoice("donations");
+									}}
+									type="radio"
+									id="choice_d"
+								/>
+								<label htmlFor="choice_d">Donations</label>
+							</div>
+						</li>
 						<li className="form-line" data-type="control_button" id="id_14">
 							{error && (
 								<p style={{ color: "red", margin: "10px auto" }}>
@@ -158,7 +190,6 @@ export default Admin;
 
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
-	if (cookie)
-		return { redirect: { permanent: false, destination: "/donations" } };
+	if (cookie) return { redirect: { permanent: false, destination: "/" } };
 	else return { props: {} };
 }

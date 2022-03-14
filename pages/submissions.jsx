@@ -2,6 +2,15 @@ import axios from "axios";
 import baseUrl from "../helpers/api";
 import Head from "next/head";
 
+const handleDelete = async id => {
+	try {
+		await axios.delete(`${baseUrl}/api/submission/${id}`);
+		window.location.reload();
+	} catch (e) {
+		console.log("Couldn't delete.");
+	}
+};
+
 const Submissions = ({ subs }) => {
 	return (
 		<>
@@ -36,7 +45,7 @@ const Submissions = ({ subs }) => {
 							<span style={{ whiteSpace: "pre-wrap" }}>{sub.message}</span>
 						</span>
 						<span style={{ padding: "5px 0", display: "block" }}>
-							<button>{`Delete ${sub._id}`}</button>
+							<button onClick={() => handleDelete(sub._id)}>Delete</button>
 						</span>
 					</div>
 				))}
@@ -49,11 +58,10 @@ export default Submissions;
 
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
+	const headers = { cookie };
 	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
 	try {
-		const resp = await axios.post(`${baseUrl}/api/submissions`, {
-			headers: { cookie },
-		});
+		const resp = await axios.get(`${baseUrl}/api/submissions`, { headers });
 		return { props: { subs: resp.data } };
 	} catch (err) {
 		console.log(err);

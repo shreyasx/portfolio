@@ -5,7 +5,7 @@ import { authenticated } from "../../middlewares/auth";
 initDB();
 
 export default authenticated(async function fn(req, res) {
-	if (req.method == "POST") {
+	if (req.method == "GET") {
 		try {
 			const data = await Donation.find();
 			res.json(data);
