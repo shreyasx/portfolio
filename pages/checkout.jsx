@@ -11,9 +11,9 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE);
 export default function App() {
 	const router = useRouter();
 	let amount;
+	const [clientSecret, setClientSecret] = useState("");
 	if (typeof sessionStorage !== "undefined")
 		amount = JSON.parse(sessionStorage.getItem("data"))?.amount;
-	const [clientSecret, setClientSecret] = useState("");
 	useEffect(() => {
 		(async () => {
 			const resp = await axios.post(`${baseUrl}/api/get-payment-intent`, {

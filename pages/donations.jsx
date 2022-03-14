@@ -2,10 +2,18 @@ import axios from "axios";
 import Head from "next/head";
 import baseUrl from "../helpers/api";
 
-const Submissions = ({ subs }) => {
+const Donations = ({ donations }) => {
+	console.log(donations);
 	return (
 		<>
-			{subs.map((sub, index) => {
+			<Head>
+				<link
+					rel="stylesheet"
+					href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+					integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+				></link>
+			</Head>
+			{donations.map((donation, index) => {
 				return (
 					<div key={index} className="accordion" id="accordionExample">
 						<div className="card">
@@ -19,10 +27,7 @@ const Submissions = ({ subs }) => {
 										aria-expanded="false"
 										aria-controls={`collapse${index}`}
 									>
-										From: {sub.name}, on {sub.createdAt}
-										<button className="btn btn-outline-danger">
-											Delete permanently
-										</button>
+										From: {donation.name}, Rs. {sub.amount.toString()}
 									</button>
 								</h5>
 							</div>
@@ -33,10 +38,12 @@ const Submissions = ({ subs }) => {
 								data-parent="#accordionExample"
 							>
 								<div className="card-body">
-									Subject: {sub.subject} <br />
-									Email: {sub.email} <br />
-									Message:{" "}
-									<span style={{ whiteSpace: "pre-wrap" }}>{sub.message}</span>
+									Email: {donation.email} <br />
+									Date: {donation.date} <br />
+									Comments:{` `} <br />
+									<span style="white-space: pre-wrap;">
+										{donation.comments}
+									</span>
 									<br />
 								</div>
 							</div>
@@ -48,16 +55,16 @@ const Submissions = ({ subs }) => {
 	);
 };
 
-export default Submissions;
+export default Donations;
 
 export async function getServerSideProps(ctx) {
-	// const cookie = ctx.req?.headers?.cookie;
-	// if (!cookie) return { redirect: { permanent: false, destination: "/" } };
+	const cookie = ctx.req?.headers?.cookie;
+	if (!cookie) return { redirect: { permanent: false, destination: "/" } };
 	try {
-		const resp = await axios.post(`${baseUrl}/api/submissions`, {
-			// headers: { cookie },
+		const resp = await axios.get(`${baseUrl}/api/donations`, {
+			headers: { cookie },
 		});
-		return { props: { subs: resp.data } };
+		return { props: { donations: resp.data } };
 	} catch (err) {
 		console.log(err);
 		return { redirect: { permanent: false, destination: "/" } };
