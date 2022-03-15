@@ -82,7 +82,7 @@ export async function getServerSideProps(ctx) {
 	if (!cookie) return { redirect: { permanent: false, destination: "/admin" } };
 	try {
 		const resp = await axios.get(`${baseUrl}/api/donations`, { headers });
-		return { props: { donations: resp.data } };
+		return { props: { donations: resp.data.reverse() } };
 	} catch (err) {
 		console.log(err);
 		return { redirect: { permanent: false, destination: "/" } };

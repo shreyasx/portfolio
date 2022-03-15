@@ -192,7 +192,7 @@ export default Admin;
 
 export async function getServerSideProps(ctx) {
 	const cookie = ctx.req?.headers?.cookie;
-	if (cookie)
+	if (cookie.slice(0, 10) === "authToken=")
 		return { redirect: { permanent: false, destination: "/submissions" } };
 	else return { props: {} };
 }
