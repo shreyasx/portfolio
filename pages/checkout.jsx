@@ -7,9 +7,7 @@ import baseUrl from "../helpers/api";
 import { useRouter } from "next/router";
 import Head from "next/dist/shared/lib/head";
 
-const stripePromise = loadStripe(
-	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_TEST
-);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE);
 
 export default function App() {
 	const router = useRouter();

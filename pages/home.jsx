@@ -205,13 +205,13 @@ export default function Home() {
 								JavaScript code snippet. BOOM! From that moment, till now,
 								I&apos;m always excited to learn more about it. I&apos;m a
 								Full-Stack Web Developer who knows more than just JavaScript,
-								and I spend most of my days coding. Apart from that I&apos;m an
+								and I spend most of my time coding. Apart from that I&apos;m an
 								undergraduate in the department of Computer Science and
 								Engineering.
 							</p>
 							<hr />
 							<h4>TOP EXPERTISE</h4>
-							<p>Full-Stack developer with primary focus on the MERN Stack.</p>
+							<p>Full-Stack developer with primary focus on JavaScript.</p>
 							<div id={styles.skills}>
 								<ul>
 									<li>ReactJS/Redux</li>
@@ -338,13 +338,11 @@ export default function Home() {
 							className={styles["input-field"]}
 							type="text"
 							id={"name"}
-							defaultValue="asdkfhbwef"
 							required
 						/>
 						<label>Subject</label>
 						<input
 							required
-							defaultValue="asdkfhbwef"
 							className={styles["input-field"]}
 							type="text"
 							id={"subject"}
@@ -353,7 +351,6 @@ export default function Home() {
 						<input
 							className={styles["input-field"]}
 							required
-							defaultValue="asdkfhbwef@df.com"
 							type="email"
 							id={"email"}
 						/>
@@ -361,7 +358,6 @@ export default function Home() {
 						<textarea
 							className={styles["input-field"]}
 							required
-							defaultValue="asdkfhbwef"
 							id={"message"}
 						></textarea>
 						<input id={"submit-btn"} type="submit" value="Send" />

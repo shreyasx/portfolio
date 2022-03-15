@@ -9,7 +9,7 @@ const Donations = ({ donations }) => {
 	const handleLogout = async () => {
 		try {
 			await axios.get(`${baseUrl}/api/logout`);
-			router.push({ pathname: "/" });
+			router.push({ pathname: "/home" });
 		} catch (e) {
 			console.log("Couldn't logout.");
 		}

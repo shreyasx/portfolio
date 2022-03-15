@@ -3,9 +3,11 @@ import baseUrl from "../helpers/api";
 import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
 
-const handleDelete = async id => {
+const handleDelete = async sub => {
 	try {
-		await axios.delete(`${baseUrl}/api/submission/${id}`);
+		const confirm = window.confirm(`Delete submission from ${sub.name}?`);
+		if (!confirm) return;
+		await axios.delete(`${baseUrl}/api/submission/${sub._id}`);
 		window.location.reload();
 	} catch (e) {
 		console.log("Couldn't delete.");
@@ -18,7 +20,7 @@ const Submissions = ({ subs }) => {
 	const handleLogout = async () => {
 		try {
 			await axios.get(`${baseUrl}/api/logout`);
-			router.push({ pathname: "/" });
+			router.push({ pathname: "/home" });
 		} catch (e) {
 			console.log("Couldn't logout.");
 		}
@@ -57,10 +59,14 @@ const Submissions = ({ subs }) => {
 						</span>
 						<span style={{ padding: "5px 0", display: "block" }}>
 							<strong>Message:</strong>{" "}
-							<span style={{ whiteSpace: "pre-wrap" }}>{sub.message}</span>
+							<span
+								style={{ overflowWrap: "break-word", whiteSpace: "pre-wrap" }}
+							>
+								{sub.message}
+							</span>
 						</span>
 						<span style={{ padding: "5px 0", display: "block" }}>
-							<button onClick={() => handleDelete(sub._id)}>Delete</button>
+							<button onClick={() => handleDelete(sub)}>Delete</button>
 						</span>
 					</div>
 				))}

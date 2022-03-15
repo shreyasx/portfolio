@@ -1,4 +1,4 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
+const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 export default async function checkout(req, res) {
 	if (req.method == "POST") {
