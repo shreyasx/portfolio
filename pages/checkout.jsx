@@ -45,12 +45,17 @@ export default function App() {
 				}}
 			>
 				{clientSecret && (
-					<>
-						<h1>{`Payment of Rs. ${amount / 100}`}</h1>
+					<div style={{ margin: "0 auto", maxWidth: 600 }}>
+						<h1
+							style={{
+								fontFamily:
+									'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+							}}
+						>{`Payment of Rs. ${amount / 100}`}</h1>
 						<Elements options={options} stripe={stripePromise}>
 							<CheckoutForm />
 						</Elements>
-					</>
+					</div>
 				)}
 			</div>
 		</>
