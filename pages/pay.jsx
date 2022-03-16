@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { useRouter } from "next/router";
 
-const Donate = () => {
+const Pay = () => {
 	const router = useRouter();
 	const [amount, setAmount] = React.useState(0);
 	const [name, setName] = React.useState("");
@@ -29,7 +29,7 @@ const Donate = () => {
 	return (
 		<>
 			<Head>
-				<title>Donations</title>
+				<title>Payment Page</title>
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="stylesheet" href="/donate.css" />
 				<link
@@ -61,7 +61,7 @@ const Donate = () => {
 							<div className="form-header-group  header-large">
 								<div className="header-text httal htvam">
 									<h1 id="header_28" className="form-header">
-										Donation Form
+										Payment Form
 									</h1>
 								</div>
 							</div>
@@ -185,7 +185,7 @@ const Donate = () => {
 								id="label_37"
 								htmlFor="input_37"
 							>
-								Donation Amount{" "}
+								Amount to be paid{" "}
 								<span style={{ fontWeight: 200, fontSize: "0.85em" }}>
 									(in INR)
 								</span>
@@ -213,7 +213,7 @@ const Donate = () => {
 										htmlFor="input_37_donation"
 										style={{ minHeight: "13px" }}
 									>
-										{`Make sure it's more than Rs. 50 :)`}
+										{`Minimum: Rs. 50`}
 									</label>
 								</span>
 							</div>
@@ -247,4 +247,4 @@ const Donate = () => {
 	);
 };
 
-export default Donate;
+export default Pay;

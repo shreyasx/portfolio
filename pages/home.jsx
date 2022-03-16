@@ -330,7 +330,7 @@ export default function Home() {
 					<a href=""></a>
 					<h3 id="contact-form" style={{ textAlign: "center" }}>
 						{`Get In Touch or `}
-						<Link href="/donate">{`Leave a Donation.`}</Link>
+						<Link href="/pay">{`Make a payment.`}</Link>
 					</h3>
 					<form onSubmit={onSubmit} id={styles["contact-form"]}>
 						<label>Name</label>
