@@ -13,7 +13,7 @@ export default async function save(req, res) {
 			res.json({ success: true });
 		} catch (e) {
 			console.log(e);
-			res.json({ success: false });
+			res.status(400).json({ success: false });
 		}
 	}
 }

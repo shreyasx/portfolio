@@ -2,18 +2,31 @@ import axios from "axios";
 import baseUrl from "../helpers/api";
 import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
+import React from "react";
 
-const Donations = ({ donations }) => {
+const Donations = () => {
 	const router = useRouter();
+	const [donations, setDonations] = React.useState([]);
 
 	const handleLogout = async () => {
 		try {
 			await axios.get(`${baseUrl}/api/logout`);
-			router.push({ pathname: "/home" });
+			router.push({ pathname: "/admin" });
 		} catch (e) {
 			console.log("Couldn't logout.");
 		}
 	};
+
+	React.useEffect(() => {
+		(async () => {
+			try {
+				const resp = await axios.get(`${baseUrl}/api/donations`);
+				setDonations(resp.data);
+			} catch (e) {
+				router.push({ pathname: "/admin" });
+			}
+		})();
+	}, [router]);
 
 	return (
 		<>
@@ -75,16 +88,3 @@ const Donations = ({ donations }) => {
 };
 
 export default Donations;
-
-export async function getServerSideProps(ctx) {
-	const cookie = ctx.req?.headers?.cookie;
-	const headers = { cookie };
-	if (!cookie) return { redirect: { permanent: false, destination: "/admin" } };
-	try {
-		const resp = await axios.get(`${baseUrl}/api/donations`, { headers });
-		return { props: { donations: resp.data.reverse() } };
-	} catch (err) {
-		console.log(err);
-		return { redirect: { permanent: false, destination: "/" } };
-	}
-}
