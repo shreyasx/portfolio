@@ -211,18 +211,18 @@ export default function Home() {
 							</p>
 							<hr />
 							<h4>TOP EXPERTISE</h4>
-							<p>Full-Stack developer with primary focus on JavaScript.</p>
+							<p>Full-Stack developer mostly obsessed with TypeScript.</p>
 							<div id={styles.skills}>
 								<ul>
 									<li>ReactJS/Redux</li>
 									<li>NextJS</li>
-									<li>JavaScript</li>
-									<li>HTML/CSS/jQuery</li>
+									<li>JavaScript/TypeScript</li>
 									<li>PHP/Laravel</li>
+									<li>Realtime WebApps</li>
 								</ul>
 								<ul>
 									<li>NodeJS/ExpressJS</li>
-									<li>Realtime WebApps</li>
+									<li>GraphQL</li>
 									<li>AWS (RDS/S3)</li>
 									<li>MongoDB</li>
 									<li>MySQL/PostgreSQL</li>
