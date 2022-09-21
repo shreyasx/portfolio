@@ -329,8 +329,7 @@ export default function Home() {
 				<div className={styles["main-container"]}>
 					<a href=""></a>
 					<h3 id="contact-form" style={{ textAlign: "center" }}>
-						{`Get In Touch or `}
-						<Link href="/pay">{`Make a payment.`}</Link>
+						{`Get In Touch!`}
 					</h3>
 					<form onSubmit={onSubmit} id={styles["contact-form"]}>
 						<label>Name</label>
@@ -360,7 +359,7 @@ export default function Home() {
 							required
 							id={"message"}
 						></textarea>
-						<input id={"submit-btn"} type="submit" value="Send" />
+						<input id={"submit-btn"} type="submit" value="Fire!" />
 					</form>
 				</div>
 			</section>
