@@ -2391,8 +2391,8 @@ export default function Home() {
 				</div>
 			</div>
 			<div className={styles.intro}>
-				<h3>Hi, I&apos;m Shreyas Jamkhandi.</h3>
-				<p>And I build homes for people on the Web.</p>
+				<h3>Hi, I&apos;m Shreyas Jamkhandi,</h3>
+				<p>and I like to build homes for people on the web.</p>
 				<Link href="/home" passHref={true}>
 					<button className={styles["glow-on-hover"]}>CLICK FOR MORE </button>
 				</Link>
