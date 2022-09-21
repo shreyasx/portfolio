@@ -1,6 +1,6 @@
 import Donation from "../../models/Donation";
 import initDB from "../../helpers/mongo";
-import { authenticated } from "../../middlewares/auth";
+import { authenticated } from "../../helpers/auth";
 
 initDB();
 

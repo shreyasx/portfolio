@@ -1,6 +1,6 @@
 import Submission from "../../models/Submission";
 import initDB from "../../helpers/mongo";
-import { authenticated } from "../../middlewares/auth";
+import { authenticated } from "../../helpers/auth";
 
 initDB();
 
