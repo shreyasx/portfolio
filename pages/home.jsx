@@ -280,16 +280,18 @@ export default function Home() {
 										alt="thumbnail"
 										placeholder="blur"
 										blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-										src="/images/logod.png"
+										src="/images/med.png"
 									/>
 								</div>
 								<div className={styles["post-preview"]}>
-									<h6 className={styles["post-title"]}>Logo Designer</h6>
+									<h6
+										className={styles["post-title"]}
+									>{`Medical Affairs Society (MAS)`}</h6>
 									<p className={styles["post-intro"]}>
-										Built and maintaining the website for a professional Logo
-										Designer from Goa, India.
+										Built and maintaining the website for MAS, where they have
+										subscription based content delivering system.
 									</p>
-									<a target="blank" href="https://logodesigner.vercel.app/">
+									<a target="blank" href="https://medicalaffairssociety.org/">
 										Visit now -&gt;
 									</a>
 								</div>
