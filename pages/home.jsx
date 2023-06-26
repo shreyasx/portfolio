@@ -102,7 +102,7 @@ export default function Home() {
 			<section className={styles.s1}>
 				<div className={styles["main-container"]}>
 					<div className={styles["greeting-wrapper"]}>
-						<h1>It's good to see you here.</h1>
+						<h1>{`It's good to see you here.`}</h1>
 					</div>
 					<div className={styles["intro-wrapper"]}>
 						<div className={styles["nav-wrapper"]}>
