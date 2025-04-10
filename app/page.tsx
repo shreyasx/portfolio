@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Cloud, Code, Puzzle } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -23,11 +25,18 @@ export default function Home() {
               {/* Avatar first on mobile, but second on desktop */}
               <div className="flex w-full justify-center md:order-2 md:w-2/5">
                 <Avatar className="hover-lift size-48 rounded-full border-4 border-primary/20 shadow-lg sm:size-56 md:size-72 lg:size-80">
-                  <AvatarImage
-                    src="/shreyas.jpg"
-                    alt="Shreyas Jamkhandi"
-                    className="object-cover"
-                  />
+                  <div className="relative size-full overflow-hidden rounded-full">
+                    <Image
+                      src="/shreyas.jpg"
+                      alt="Shreyas Jamkhandi"
+                      width={640}
+                      height={640}
+                      className="object-cover"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAIAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAfEAABBAICAwAAAAAAAAAAAAABAAIDBAURBxIIIUH/xAAVAQEBAAAAAAAAAAAAAAAAAAADB//EABwRAAIBBQEAAAAAAAAAAAAAAAECAAMEERMhgf/aAAwDAQACEQMRAD8Aq9m3JNVuL0DY2w08gjbWY2BjgCASSSCToDr2n2iIrKMrHkcDnzVXzn//2Q=="
+                      priority
+                    />
+                  </div>
                   <AvatarFallback>SJ</AvatarFallback>
                 </Avatar>
               </div>
