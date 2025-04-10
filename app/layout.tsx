@@ -41,7 +41,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning className={inter.variable}>
-        <head />
+        <head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    // Check for saved theme
+                    const theme = localStorage.getItem('theme');
+                    
+                    // If no theme is saved or it's 'dark', set dark mode
+                    if (!theme || theme === 'dark') {
+                      document.documentElement.classList.add('dark');
+                      document.documentElement.style.colorScheme = 'dark';
+                    }
+                  } catch (e) {
+                    // Default to dark if localStorage is not available
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.style.colorScheme = 'dark';
+                  }
+                })();
+              `,
+            }}
+          />
+        </head>
         <body
           className={cn(
             "theme-transition min-h-screen bg-background font-sans antialiased",
