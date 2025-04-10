@@ -24,21 +24,16 @@ export default function Home() {
             <div className="flex flex-col items-center gap-8 sm:gap-12 md:flex-row md:gap-16">
               {/* Avatar first on mobile, but second on desktop */}
               <div className="flex w-full justify-center md:order-2 md:w-2/5">
-                <Avatar className="hover-lift size-48 rounded-full border-4 border-primary/20 shadow-lg sm:size-56 md:size-72 lg:size-80">
-                  <div className="relative size-full overflow-hidden rounded-full">
-                    <Image
-                      src="/shreyas.jpg"
-                      alt="Shreyas Jamkhandi"
-                      width={640}
-                      height={640}
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAIAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAfEAABBAICAwAAAAAAAAAAAAABAAIDBAURBxIIIUH/xAAVAQEBAAAAAAAAAAAAAAAAAAADB//EABwRAAIBBQEAAAAAAAAAAAAAAAECAAMEERMhgf/aAAwDAQACEQMRAD8Aq9m3JNVuL0DY2w08gjbWY2BjgCASSSCToDr2n2iIrKMrHkcDnzVXzn//2Q=="
-                      priority
-                    />
-                  </div>
-                  <AvatarFallback>SJ</AvatarFallback>
-                </Avatar>
+                <div className="hover-lift relative size-48 overflow-hidden rounded-full border-4 border-primary/20 shadow-lg sm:size-56 md:size-72 lg:size-80">
+                  <Image
+                    src="/shreyas.jpg"
+                    alt="Shreyas Jamkhandi"
+                    fill
+                    sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 288px, 320px"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
               </div>
               {/* Text second on mobile, but first on desktop */}
               <div className="w-full animate-fade-up text-center md:order-1 md:w-3/5 md:pl-8 md:text-left">
