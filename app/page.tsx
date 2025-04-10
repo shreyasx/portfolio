@@ -67,7 +67,7 @@ export default function Home() {
             </h2>
             <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
               <p
-                className="text-center text-sm leading-relaxed text-foreground/90 sm:text-base"
+                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -85,7 +85,7 @@ export default function Home() {
                 {`—earning a 5-star reputation for my dedication and efficient delivery.`}
               </p>
               <p
-                className="text-center text-base leading-relaxed text-foreground/90"
+                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -94,7 +94,7 @@ export default function Home() {
                 {`After graduation, I stepped into the professional world as an Associate Technical Consultant at Finaks for an American firm called Workforce Software, where I proudly earned the PT101 certification. But my true passion lay in web development, which led me to Relso.`}
               </p>
               <p
-                className="text-center text-base leading-relaxed text-foreground/90"
+                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -103,7 +103,7 @@ export default function Home() {
                 {`Today, I work remotely as a Web Architect, consolidating multiple platforms into one Turborepo monorepo—a project that resonates with my love for streamlined, scalable solutions. Beyond coding, I'm fueled by the discipline to stay consistent and the ambition to someday build my own product.`}
               </p>
               <p
-                className="text-center text-base leading-relaxed text-foreground/90"
+                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
