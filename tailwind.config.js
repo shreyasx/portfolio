@@ -59,6 +59,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "var(--font-sans)", ...fontFamily.sans],
+        serif: ["IBM Plex Serif", "var(--font-serif)", ...fontFamily.serif],
       },
       keyframes: {
         "accordion-down": {

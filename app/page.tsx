@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Cloud, Code, Puzzle } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -19,7 +18,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="dark:hero-gradient-dark light:hero-gradient-light light:from-white light:to-[#f5f5f5] py-12 dark:from-[#121212] dark:to-background sm:py-16 md:py-24">
+        <section className="dark:hero-gradient-dark light:hero-gradient-light light:from-white light:to-[#f5f5f5] py-14 dark:from-[#121212] dark:to-background sm:py-20 md:py-28">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center gap-8 sm:gap-12 md:flex-row md:gap-16">
               {/* Avatar first on mobile, but second on desktop */}
@@ -43,7 +42,7 @@ export default function Home() {
                 >
                   {`Hi, I'm Shreyas Jamkhandi — a Remote Full-Stack Developer & Technical Consultant.`}
                 </h1>
-                <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:mx-0 md:text-lg">
+                <p className="body-text mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:mx-0">
                   {`I help businesses craft modern web platforms and streamline their processes—on
                   my own terms. Remote work fuels my creativity and discipline, letting me deliver
                   high-quality solutions while enjoying the freedom I value.`}
@@ -59,7 +58,7 @@ export default function Home() {
         {/* About Section */}
         <section
           id="about"
-          className="theme-transition bg-secondary py-16 sm:py-20 md:py-24"
+          className="theme-transition bg-secondary py-20 sm:py-24 md:py-28"
         >
           <div className="container mx-auto animate-fade-up px-4">
             <h2 className="mb-8 text-center text-xl font-bold leading-tight sm:mb-10 sm:text-2xl md:mb-12 md:text-3xl">
@@ -67,7 +66,7 @@ export default function Home() {
             </h2>
             <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
               <p
-                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
+                className="body-text text-center text-base leading-relaxed text-foreground/90"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -85,7 +84,7 @@ export default function Home() {
                 {`—earning a 5-star reputation for my dedication and efficient delivery.`}
               </p>
               <p
-                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
+                className="body-text text-center text-base leading-relaxed text-foreground/90"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -94,16 +93,16 @@ export default function Home() {
                 {`After graduation, I stepped into the professional world as an Associate Technical Consultant at Finaks for an American firm called Workforce Software, where I proudly earned the PT101 certification. But my true passion lay in web development, which led me to Relso.`}
               </p>
               <p
-                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
+                className="body-text text-center text-base leading-relaxed text-foreground/90"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
                 }}
               >
-                {`Today, I work remotely as a Web Architect, consolidating multiple platforms into one Turborepo monorepo—a project that resonates with my love for streamlined, scalable solutions. Beyond coding, I'm fueled by the discipline to stay consistent and the ambition to someday build my own product.`}
+                {`Today, I work remotely as a Web Architect, currently consolidating multiple codebases into one Turborepo monorepo—a project that resonates with my love for streamlined, scalable solutions. Beyond coding, I'm fueled by the discipline to stay consistent and the ambition to someday build my own product.`}
               </p>
               <p
-                className="text-center text-sm leading-relaxed text-foreground/90 md:text-lg"
+                className="body-text text-center text-base leading-relaxed text-foreground/90"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -116,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="theme-transition bg-background py-24">
+        <section id="skills" className="theme-transition bg-background py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
               Skills & Tech Stack
@@ -143,25 +142,25 @@ export default function Home() {
                     <ul className="space-y-4">
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           JavaScript, TypeScript
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           React, Next.js, Node.js, Express
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           TailwindCSS, CSS-in-JS
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           SQL & NoSQL Databases
                         </span>
                       </li>
@@ -190,19 +189,19 @@ export default function Home() {
                     <ul className="space-y-4">
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           Shopify, Zoho
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           REST & GraphQL
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           Third-party API Integrations
                         </span>
                       </li>
@@ -231,13 +230,13 @@ export default function Home() {
                     <ul className="space-y-4">
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           Docker
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
                           Basic AWS
                         </span>
                       </li>
@@ -250,7 +249,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="theme-transition bg-secondary py-24">
+        <section id="projects" className="theme-transition bg-secondary py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
               Projects
@@ -262,7 +261,7 @@ export default function Home() {
                 className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
                 style={{ animationDelay: "100ms" }}
               >
-                <CardHeader className="card-header pb-4">
+                <CardHeader className="card-header">
                   <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
                     <div className="rounded-full bg-primary/10 p-2 text-primary">
                       <svg
@@ -286,7 +285,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="mb-6 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
                     A sophisticated B2B website for a company specializing in
                     premium Indian furniture in the USA. The platform features a
                     modern, stylish user interface complemented by a robust
@@ -332,7 +331,7 @@ export default function Home() {
                 className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
                 style={{ animationDelay: "200ms" }}
               >
-                <CardHeader className="card-header pb-4">
+                <CardHeader className="card-header">
                   <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
                     <div className="rounded-full bg-primary/10 p-2 text-primary">
                       <svg
@@ -356,7 +355,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="mb-6 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
                     A dynamic platform designed to empower company
                     representatives with efficient workflow management tools.
                     This application facilitates comprehensive tracking of
@@ -403,7 +402,7 @@ export default function Home() {
                 className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
                 style={{ animationDelay: "300ms" }}
               >
-                <CardHeader className="card-header pb-4">
+                <CardHeader className="card-header">
                   <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
                     <div className="rounded-full bg-primary/10 p-2 text-primary">
                       <svg
@@ -424,7 +423,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="mb-6 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
                     A creatively designed freelance project that showcases a
                     game designer&apos;s portfolio with distinctive flair. The
                     site features a stylish, game-inspired user interface
@@ -471,7 +470,7 @@ export default function Home() {
                 className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
                 style={{ animationDelay: "400ms" }}
               >
-                <CardHeader className="card-header pb-4">
+                <CardHeader className="card-header">
                   <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
                     <div className="rounded-full bg-primary/10 p-2 text-primary">
                       <svg
@@ -492,7 +491,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="mb-6 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
                     A professional and refined website developed for the Medical
                     Affairs Society. This platform distinguishes itself through
                     sophisticated, elegant design using Material UI, diverging
@@ -538,7 +537,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="bg-background py-24">
+        <section id="experience" className="bg-background py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-16 text-center text-2xl font-bold leading-tight md:text-3xl">
               Experience
@@ -546,13 +545,13 @@ export default function Home() {
 
             <div className="mx-auto grid max-w-4xl grid-cols-1 gap-16">
               {/* Experience 1 */}
-              <Card className="relative overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 {/* Decorative border accent */}
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
 
-                <CardContent className="p-8">
-                  <div className="flex flex-col gap-6 md:flex-row">
-                    <div className="md:w-1/4">
+                <CardContent className="grid h-full p-8">
+                  <div className="grid h-full grid-cols-1 md:grid-cols-4 md:gap-6">
+                    <div className="md:col-span-1">
                       <div className="mb-3 inline-flex rounded-full border-2 border-primary/30 bg-primary/10 p-3 text-primary">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -589,32 +588,32 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div className="relative before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:w-3/4 md:pl-8">
+                    <div className="relative mt-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:col-span-3 md:mt-0 md:pl-8">
                       <ul className="space-y-4 text-foreground">
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Enjoying full remote flexibility while leading
                             development on Relso&apos;s primary web platforms.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Unifying multiple projects under one Turborepo
                             monorepo to improve scalability and consistency.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Implementing modern UI components, integrating APIs,
                             and enhancing product workflows.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Streamlined customer acquisition processes and
                             increased data accuracy.
                           </span>
@@ -626,13 +625,13 @@ export default function Home() {
               </Card>
 
               {/* Experience 2 */}
-              <Card className="relative overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 {/* Decorative border accent */}
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
 
-                <CardContent className="p-8">
-                  <div className="flex flex-col gap-6 md:flex-row">
-                    <div className="md:w-1/4">
+                <CardContent className="grid h-full p-8">
+                  <div className="grid h-full grid-cols-1 md:grid-cols-4 md:gap-6">
+                    <div className="md:col-span-1">
                       <div className="mb-3 inline-flex rounded-full border-2 border-primary/30 bg-primary/10 p-3 text-primary">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -671,32 +670,32 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div className="relative before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:w-3/4 md:pl-8">
+                    <div className="relative mt-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:col-span-3 md:mt-0 md:pl-8">
                       <ul className="space-y-4 text-foreground">
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Collaborated with cross-functional teams to deliver
                             solutions for Workforce Software.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Earned the PT101 certification, a milestone in
                             technical consulting excellence.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Assisted in solution architecture, documentation,
                             and implementation.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="text-base leading-relaxed">
+                          <span className="body-text text-base leading-relaxed">
                             Supported senior consultants on major project
                             deliverables.
                           </span>
@@ -711,14 +710,14 @@ export default function Home() {
         </section>
 
         {/* Problem Solving Section */}
-        <section id="problem-solving" className="bg-secondary py-24">
+        <section id="problem-solving" className="bg-secondary py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-12 text-center text-2xl font-bold leading-tight md:text-3xl">
               Problem Solving
             </h2>
             <Card className="mx-auto max-w-4xl border border-primary/15 bg-card/80">
               <CardContent className="card-content p-8">
-                <p className="text-justify text-base leading-relaxed text-foreground">
+                <p className="body-text text-justify text-base leading-relaxed text-foreground">
                   {`I'm the go-to person when technical challenges rear their heads at Relso. Whether it's 
                   troubleshooting a stubborn bug or architecting an entirely new workflow, I thrive on 
                   diagnosing complex issues and creating efficient, sustainable solutions. My goal is always 
@@ -731,7 +730,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="theme-transition bg-background py-24">
+        <section id="contact" className="theme-transition bg-background py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
               Get in Touch
@@ -755,14 +754,14 @@ export default function Home() {
                   <h3 className="text-xl font-semibold leading-tight">
                     Let&apos;s Connect
                   </h3>
-                  <p className="text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text text-justify text-base leading-relaxed text-foreground">
                     I&apos;m currently based in the scenic town of Sanquelim,
                     Goa, and I&apos;ve embraced remote work as my lifestyle of
                     choice. I&apos;m always open to discussing new projects,
                     creative ideas, or opportunities — especially those that
                     align with my passion for flexibility and innovation.
                   </p>
-                  <p className="text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text text-justify text-base leading-relaxed text-foreground">
                     Want to learn how I can help build your next big thing? Drop
                     a message or reach out on my social channels—I&apos;ll do my
                     best to get back to you promptly!

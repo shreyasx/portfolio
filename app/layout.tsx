@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { fontSans } from "@/lib/fonts";
+import { fontSans, fontSerif } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -40,7 +40,11 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning className={inter.variable}>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={`${inter.variable} ${fontSerif.variable}`}
+      >
         <head>
           <script
             dangerouslySetInnerHTML={{
@@ -67,8 +71,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           className={cn(
-            "theme-transition min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            "theme-transition min-h-screen bg-background antialiased",
+            fontSans.variable,
+            fontSerif.variable
           )}
         >
           <ThemeProvider
