@@ -285,7 +285,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
                     A sophisticated B2B website for a company specializing in
                     premium Indian furniture in the USA. The platform features a
                     modern, stylish user interface complemented by a robust
@@ -355,7 +355,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
                     A dynamic platform designed to empower company
                     representatives with efficient workflow management tools.
                     This application facilitates comprehensive tracking of
@@ -423,7 +423,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
                     A creatively designed freelance project that showcases a
                     game designer&apos;s portfolio with distinctive flair. The
                     site features a stylish, game-inspired user interface
@@ -491,7 +491,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
                     A professional and refined website developed for the Medical
                     Affairs Society. This platform distinguishes itself through
                     sophisticated, elegant design using Material UI, diverging
@@ -721,7 +721,7 @@ export default function Home() {
             </h2>
             <Card className="mx-auto max-w-4xl border border-primary/15 bg-card/80">
               <CardContent className="card-content p-8">
-                <p className="body-text text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
                   {`I'm the go-to person when technical challenges rear their heads at Relso. Whether it's 
                   troubleshooting a stubborn bug or architecting an entirely new workflow, I thrive on 
                   diagnosing complex issues and creating efficient, sustainable solutions. My goal is always 
@@ -758,14 +758,14 @@ export default function Home() {
                   <h3 className="text-center text-xl font-semibold leading-tight">
                     Let&apos;s Connect
                   </h3>
-                  <p className="body-text text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                  <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
                     I&apos;m currently based in the scenic town of Sanquelim,
                     Goa, and I&apos;ve embraced remote work as my lifestyle of
                     choice. I&apos;m always open to discussing new projects,
                     creative ideas, or opportunities — especially those that
                     align with my passion for flexibility and innovation.
                   </p>
-                  <p className="body-text text-center text-sm leading-relaxed text-foreground sm:text-justify">
+                  <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
                     Want to learn how I can help build your next big thing? Drop
                     a message or reach out on my social channels—I&apos;ll do my
                     best to get back to you promptly!
