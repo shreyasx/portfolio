@@ -37,12 +37,12 @@ export default function Home() {
               {/* Text second on mobile, but first on desktop */}
               <div className="w-full animate-fade-up text-center md:order-1 md:w-3/5 md:pl-8 md:text-left">
                 <h1
-                  className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl lg:text-5xl"
+                  className="text-xl font-bold text-foreground sm:text-2xl md:text-3xl lg:text-4xl"
                   style={{ lineHeight: 1.25 }}
                 >
                   {`Hi, I'm Shreyas Jamkhandi — a Remote Full-Stack Developer & Technical Consultant.`}
                 </h1>
-                <p className="body-text mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:mx-0">
+                <p className="body-text mt-4 max-w-2xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
                   {`I help businesses craft modern web platforms and streamline their processes—on
                   my own terms. Remote work fuels my creativity and discipline, letting me deliver
                   high-quality solutions while enjoying the freedom I value.`}
@@ -66,7 +66,7 @@ export default function Home() {
             </h2>
             <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
               <p
-                className="body-text text-center text-base leading-relaxed text-foreground/90"
+                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -84,7 +84,7 @@ export default function Home() {
                 {`—earning a 5-star reputation for my dedication and efficient delivery.`}
               </p>
               <p
-                className="body-text text-center text-base leading-relaxed text-foreground/90"
+                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -93,7 +93,7 @@ export default function Home() {
                 {`After graduation, I stepped into the professional world as an Associate Technical Consultant at Finaks for an American firm called Workforce Software, where I proudly earned the PT101 certification. But my true passion lay in web development, which led me to Relso.`}
               </p>
               <p
-                className="body-text text-center text-base leading-relaxed text-foreground/90"
+                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -102,7 +102,7 @@ export default function Home() {
                 {`Today, I work remotely as a Web Architect, currently consolidating multiple codebases into one Turborepo monorepo—a project that resonates with my love for streamlined, scalable solutions. Beyond coding, I'm fueled by the discipline to stay consistent and the ambition to someday build my own product.`}
               </p>
               <p
-                className="body-text text-center text-base leading-relaxed text-foreground/90"
+                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
                 style={{
                   wordBreak: "keep-all",
                   hyphens: "none",
@@ -142,25 +142,25 @@ export default function Home() {
                     <ul className="space-y-4">
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           JavaScript, TypeScript
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           React, Next.js, Node.js, Express
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           TailwindCSS, CSS-in-JS
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           SQL & NoSQL Databases
                         </span>
                       </li>
@@ -189,19 +189,19 @@ export default function Home() {
                     <ul className="space-y-4">
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           Shopify, Zoho
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           REST & GraphQL
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           Third-party API Integrations
                         </span>
                       </li>
@@ -230,13 +230,13 @@ export default function Home() {
                     <ul className="space-y-4">
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           Docker
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-base leading-relaxed text-foreground transition-colors group-hover/item:text-primary">
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
                           Basic AWS
                         </span>
                       </li>
@@ -285,7 +285,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-sm leading-relaxed text-foreground">
                     A sophisticated B2B website for a company specializing in
                     premium Indian furniture in the USA. The platform features a
                     modern, stylish user interface complemented by a robust
@@ -355,7 +355,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-sm leading-relaxed text-foreground">
                     A dynamic platform designed to empower company
                     representatives with efficient workflow management tools.
                     This application facilitates comprehensive tracking of
@@ -423,7 +423,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-sm leading-relaxed text-foreground">
                     A creatively designed freelance project that showcases a
                     game designer&apos;s portfolio with distinctive flair. The
                     site features a stylish, game-inspired user interface
@@ -491,7 +491,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text mb-6 px-4 text-justify text-sm leading-relaxed text-foreground">
                     A professional and refined website developed for the Medical
                     Affairs Society. This platform distinguishes itself through
                     sophisticated, elegant design using Material UI, diverging
@@ -576,14 +576,16 @@ export default function Home() {
                           <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                       </div>
-                      <h3 className="mb-2 text-lg font-bold leading-tight text-foreground">
+                      <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
                         Web Architect
                       </h3>
-                      <p className="mb-1 font-medium text-primary">@ Relso</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="mb-1 text-sm font-medium text-primary sm:text-base">
+                        @ Relso
+                      </p>
+                      <p className="text-xs text-muted-foreground sm:text-sm">
                         March 2024 - Present
                       </p>
-                      <p className="text-sm font-medium text-muted-foreground">
+                      <p className="text-xs font-medium text-muted-foreground sm:text-sm">
                         <DynamicTenure startDate="2024-03-01" />
                       </p>
                     </div>
@@ -592,28 +594,28 @@ export default function Home() {
                       <ul className="space-y-4 text-foreground">
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Enjoying full remote flexibility while leading
                             development on Relso&apos;s primary web platforms.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Unifying multiple projects under one Turborepo
                             monorepo to improve scalability and consistency.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Implementing modern UI components, integrating APIs,
                             and enhancing product workflows.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Streamlined customer acquisition processes and
                             increased data accuracy.
                           </span>
@@ -658,14 +660,16 @@ export default function Home() {
                           <path d="M15 19h-6"></path>
                         </svg>
                       </div>
-                      <h3 className="mb-2 text-lg font-bold leading-tight text-foreground">
+                      <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
                         Associate Technical Consultant Intern
                       </h3>
-                      <p className="mb-1 font-medium text-primary">@ Finaks</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="mb-1 text-sm font-medium text-primary sm:text-base">
+                        @ Finaks
+                      </p>
+                      <p className="text-xs text-muted-foreground sm:text-sm">
                         August 2023 - February 2024
                       </p>
-                      <p className="text-sm font-medium text-muted-foreground">
+                      <p className="text-xs font-medium text-muted-foreground sm:text-sm">
                         7 months
                       </p>
                     </div>
@@ -674,28 +678,28 @@ export default function Home() {
                       <ul className="space-y-4 text-foreground">
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Collaborated with cross-functional teams to deliver
                             solutions for Workforce Software.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Earned the PT101 certification, a milestone in
                             technical consulting excellence.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Assisted in solution architecture, documentation,
                             and implementation.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-base leading-relaxed">
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
                             Supported senior consultants on major project
                             deliverables.
                           </span>
@@ -717,7 +721,7 @@ export default function Home() {
             </h2>
             <Card className="mx-auto max-w-4xl border border-primary/15 bg-card/80">
               <CardContent className="card-content p-8">
-                <p className="body-text text-justify text-base leading-relaxed text-foreground">
+                <p className="body-text text-justify text-sm leading-relaxed text-foreground">
                   {`I'm the go-to person when technical challenges rear their heads at Relso. Whether it's 
                   troubleshooting a stubborn bug or architecting an entirely new workflow, I thrive on 
                   diagnosing complex issues and creating efficient, sustainable solutions. My goal is always 
@@ -754,14 +758,14 @@ export default function Home() {
                   <h3 className="text-xl font-semibold leading-tight">
                     Let&apos;s Connect
                   </h3>
-                  <p className="body-text text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text text-justify text-sm leading-relaxed text-foreground">
                     I&apos;m currently based in the scenic town of Sanquelim,
                     Goa, and I&apos;ve embraced remote work as my lifestyle of
                     choice. I&apos;m always open to discussing new projects,
                     creative ideas, or opportunities — especially those that
                     align with my passion for flexibility and innovation.
                   </p>
-                  <p className="body-text text-justify text-base leading-relaxed text-foreground">
+                  <p className="body-text text-justify text-sm leading-relaxed text-foreground">
                     Want to learn how I can help build your next big thing? Drop
                     a message or reach out on my social channels—I&apos;ll do my
                     best to get back to you promptly!
