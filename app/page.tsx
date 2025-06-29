@@ -37,15 +37,13 @@ export default function Home() {
               {/* Text second on mobile, but first on desktop */}
               <div className="w-full animate-fade-up text-center md:order-1 md:w-3/5 md:pl-8 md:text-left">
                 <h1
-                  className="text-xl font-bold text-foreground sm:text-2xl md:text-3xl lg:text-4xl"
-                  style={{ lineHeight: 1.25 }}
+                  className="text-lg font-bold text-foreground sm:text-2xl md:text-3xl lg:text-4xl"
+                  style={{ lineHeight: 1.35 }}
                 >
-                  {`Hi, I'm Shreyas Jamkhandi — a Remote Full-Stack Developer & Technical Consultant.`}
+                  {`Shreyas Jamkhandi → Remote Full-Stack Engineer who pairs first-principles thinking with AI fire-power.`}
                 </h1>
                 <p className="body-text mt-4 max-w-2xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
-                  {`I help businesses craft modern web platforms and streamline their processes—on
-                  my own terms. Remote work fuels my creativity and discipline, letting me deliver
-                  high-quality solutions while enjoying the freedom I value.`}
+                  {`I help businesses cut noise, ship faster, and measure twice before we ship once.`}
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start">
                   <HeroButtons />
@@ -72,16 +70,16 @@ export default function Home() {
                   hyphens: "none",
                 }}
               >
-                {`I'm a Full-Stack Developer based in Sanquelim, Goa, driven by discipline, autonomy, and the thrill of building meaningful digital experiences. I graduated in 2023 with a B.E. in Computer Science from KLS Gogte Institute of Technology, Belagavi. Back in college, I took on freelance projects via `}
+                {`I'm a full-stack developer from Sanquelim, Goa, whose compass points toward craftsmanship, autonomy, and the quiet thrill of elegant problem-solving. A 2023 B.E. (Computer Science) graduate of KLS Gogte Institute of Technology, I cut my teeth on freelance builds at `}
                 <a
                   href="https://www.freelancer.in/u/shreyxs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-primary transition-colors hover:underline"
                 >
-                  Freelancer.in
+                  freelancer.in
                 </a>
-                {`—earning a 5-star reputation for my dedication and efficient delivery.`}
+                {`—earning a steady run of 5-star reviews for shipping clean code on tight timelines.`}
               </p>
               <p
                 className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
@@ -90,7 +88,7 @@ export default function Home() {
                   hyphens: "none",
                 }}
               >
-                {`After graduation, I stepped into the professional world as an Associate Technical Consultant at Finaks for an American firm called Workforce Software, where I proudly earned the PT101 certification. But my true passion lay in web development, which led me to Relso.`}
+                {`My first post-grad challenge was with Finaks, consulting for Workforce Software, where I secured the PT101 credential while learning to translate business nuance into technical architecture. That appetite for end-to-end ownership brought me to Relso, the place I now call home.`}
               </p>
               <p
                 className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
@@ -99,7 +97,7 @@ export default function Home() {
                   hyphens: "none",
                 }}
               >
-                {`Today, I work remotely as a Web Architect, currently consolidating multiple codebases into one Turborepo monorepo—a project that resonates with my love for streamlined, scalable solutions. Beyond coding, I'm fueled by the discipline to stay consistent and the ambition to someday build my own product.`}
+                {`Today, as Web Architect, I safeguard Relso’s digital estate—from the public site that greets every visitor to RepCorner, the internal nerve-centre our sales & ops teams touch hourly. My remit: keep things lean, lightning-fast, and quietly future-proof.`}
               </p>
               <p
                 className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
@@ -108,7 +106,7 @@ export default function Home() {
                   hyphens: "none",
                 }}
               >
-                {`Whether it's problem-solving or pioneering new features, I hold myself to a high standard—because if we're going to create something, let's make it exceptional.`}
+                {`Frameworks evolve; judgment endures—so I lean on AI to out-learn yesterday’s best practice and build what’s needed today.`}
               </p>
             </div>
           </div>
@@ -117,9 +115,14 @@ export default function Home() {
         {/* Skills Section */}
         <section id="skills" className="theme-transition bg-background py-28">
           <div className="container mx-auto px-4">
-            <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
-              Skills & Tech Stack
+            <h2 className="mb-4 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
+              Tool Belt & Working Style
             </h2>
+
+            <p className="mx-auto mb-16 max-w-3xl animate-fade-up text-center text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
+              Tools are transient; I stay dangerous by pairing core fundamentals
+              with AI copilots that cut ramp-up time to near-zero.
+            </p>
 
             <div className="skills-grid grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {/* Core Technologies */}
@@ -240,6 +243,12 @@ export default function Home() {
                           Basic AWS
                         </span>
                       </li>
+                      <li className="group/item flex items-center gap-3 transition-all duration-300">
+                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
+                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
+                          Kubernetes
+                        </span>
+                      </li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -256,7 +265,72 @@ export default function Home() {
             </h2>
 
             <div className="grid grid-cols-1 gap-16 md:gap-8 lg:grid-cols-2 xl:gap-14">
-              {/* Project 1 */}
+              <Card
+                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
+                style={{ animationDelay: "400ms" }}
+              >
+                <CardHeader className="card-header">
+                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
+                    <div className="rounded-full bg-primary/10 p-2 text-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path>
+                      </svg>
+                    </div>
+                    StoreScore
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="card-content">
+                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
+                    A production-grade analytics app now live on the Shopify App
+                    Store. StoreScore wires into the WebPixel API to log every
+                    storefront touchpoint—add-to-cart clicks, checkout steps,
+                    abandonments, and conversions—and translates the stream into
+                    a clear, action-ready dashboard. I built the pixel script,
+                    event pipeline, and admin UI end-to-end, steering the
+                    project through Shopify’s rigorous review to public launch
+                    and giving merchants an elegant way to spot leaks and grow
+                    revenue.
+                  </p>
+                  <div className="mb-6 flex flex-wrap gap-4">
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      Typescript
+                    </Badge>
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      Next.js
+                    </Badge>
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      TailwindCSS
+                    </Badge>
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      Shopify App
+                    </Badge>
+                  </div>
+                  <div className="border-t border-border/50 pt-2">
+                    <a
+                      href="https://apps.shopify.com/storescore"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                    >
+                      Shopify App Store{" "}
+                      <span className="transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
               <Card
                 className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
                 style={{ animationDelay: "100ms" }}
@@ -281,20 +355,21 @@ export default function Home() {
                         <path d="M7 17H2v5h5v-5z"></path>
                       </svg>
                     </div>
-                    Relso Company Main Website
+                    Relso Furniture D2C
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="card-content">
                   <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A sophisticated B2B website for a company specializing in
-                    premium Indian furniture in the USA. The platform features a
-                    modern, stylish user interface complemented by a robust
-                    backend that processes orders and creates customer profiles
-                    through seamless Zoho API integration. I was deeply involved
-                    in design ideation and collaborated closely with
-                    non-technical founders to translate complex business
-                    requirements into effective digital solutions that enhance
-                    customer engagement and streamline operations.
+                    A sophisticated site that began life as a B2B catalogue for
+                    premium Indian furniture in the USA has since been
+                    re-engineered into a Shopify-powered D2C storefront. The
+                    refreshed platform keeps its modern, high-style UI while
+                    relying on Shopify’s native checkout and customer accounts
+                    to manage orders end-to-end, replacing the former Zoho API
+                    layer. I led the redesign, working with non-technical
+                    founders to turn shifting business goals into a seamless
+                    experience that lifts shopper engagement and streamlines
+                    operations.
                   </p>
                   <div className="mb-6 flex flex-wrap gap-4">
                     <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
@@ -312,12 +387,12 @@ export default function Home() {
                   </div>
                   <div className="border-t border-border/50 pt-2">
                     <a
-                      href="https://relso.today"
+                      href="https://relsofurniture.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
                     >
-                      Visit Website{" "}
+                      Live Site{" "}
                       <span className="transition-transform group-hover:translate-x-1">
                         →
                       </span>
@@ -326,7 +401,73 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Project 2 */}
+              <Card
+                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
+                style={{ animationDelay: "300ms" }}
+              >
+                <CardHeader className="card-header">
+                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
+                    <div className="rounded-full bg-primary/10 p-2 text-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3Z"></path>
+                      </svg>
+                    </div>
+                    Freelance Website for a Game Designer
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="card-content">
+                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
+                    A creatively designed freelance project that showcases a
+                    game designer&apos;s portfolio with distinctive flair. The
+                    site features a stylish, game-inspired user interface
+                    meticulously crafted to effectively highlight the
+                    designer&apos;s professional experience and creative works.
+                    The project embraces innovative design approaches and modern
+                    aesthetics that reflect the designer&apos;s unique style
+                    while maintaining usability and engagement, resulting in a
+                    compelling digital portfolio that stands out in a
+                    competitive industry.
+                  </p>
+                  <div className="mb-6 flex flex-wrap gap-4">
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      Next.js
+                    </Badge>
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      TypeScript
+                    </Badge>
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      TailwindCSS
+                    </Badge>
+                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
+                      Framer Motion
+                    </Badge>
+                  </div>
+                  <div className="border-t border-border/50 pt-2">
+                    <a
+                      href="https://rohan-agarwal.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                    >
+                      Live Site{" "}
+                      <span className="transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
               <Card
                 className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
                 style={{ animationDelay: "200ms" }}
@@ -388,143 +529,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
                     >
-                      Visit Website{" "}
-                      <span className="transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 3 */}
-              <Card
-                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
-                style={{ animationDelay: "300ms" }}
-              >
-                <CardHeader className="card-header">
-                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
-                    <div className="rounded-full bg-primary/10 p-2 text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3Z"></path>
-                      </svg>
-                    </div>
-                    Freelance Website for a Game Designer
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A creatively designed freelance project that showcases a
-                    game designer&apos;s portfolio with distinctive flair. The
-                    site features a stylish, game-inspired user interface
-                    meticulously crafted to effectively highlight the
-                    designer&apos;s professional experience and creative works.
-                    The project embraces innovative design approaches and modern
-                    aesthetics that reflect the designer&apos;s unique style
-                    while maintaining usability and engagement, resulting in a
-                    compelling digital portfolio that stands out in a
-                    competitive industry.
-                  </p>
-                  <div className="mb-6 flex flex-wrap gap-4">
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Next.js
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TypeScript
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TailwindCSS
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Framer Motion
-                    </Badge>
-                  </div>
-                  <div className="border-t border-border/50 pt-2">
-                    <a
-                      href="https://rohan-agarwal.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
-                    >
-                      Visit Website{" "}
-                      <span className="transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 4 */}
-              <Card
-                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
-                style={{ animationDelay: "400ms" }}
-              >
-                <CardHeader className="card-header">
-                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
-                    <div className="rounded-full bg-primary/10 p-2 text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path>
-                      </svg>
-                    </div>
-                    MAS (Medical Affairs Society) Website
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A professional and refined website developed for the Medical
-                    Affairs Society. This platform distinguishes itself through
-                    sophisticated, elegant design using Material UI, diverging
-                    from the Next.js, Tailwind, and ShadcnUI stack employed in
-                    other projects. The site features a clean layout with
-                    thoughtfully spaced design elements and modern aesthetics
-                    that contribute to a highly functional and professional
-                    digital presence, effectively representing the
-                    society&apos;s mission and providing valuable resources to
-                    its members.
-                  </p>
-                  <div className="mb-6 flex flex-wrap gap-4">
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      React
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      JavaScript
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Material UI
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Responsive Design
-                    </Badge>
-                  </div>
-                  <div className="border-t border-border/50 pt-2">
-                    <a
-                      href="https://medicalaffairssociety.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
-                    >
-                      Visit Website{" "}
+                      Live Site{" "}
                       <span className="transition-transform group-hover:translate-x-1">
                         →
                       </span>
@@ -717,7 +722,7 @@ export default function Home() {
         <section id="problem-solving" className="bg-secondary py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-12 text-center text-2xl font-bold leading-tight md:text-3xl">
-              Problem Solving
+              Operating Principles
             </h2>
             <Card className="mx-auto max-w-4xl border border-primary/15 bg-card/80">
               <CardContent className="card-content p-8">
@@ -747,7 +752,7 @@ export default function Home() {
                 style={{ animationDelay: "100ms" }}
               >
                 <h3 className="text-xl font-semibold leading-tight">
-                  Send a Message
+                  Drop a Line
                 </h3>
                 <ContactForm />
               </div>
@@ -756,7 +761,7 @@ export default function Home() {
               <div className="flex flex-col justify-center space-y-8">
                 <div className="space-y-6">
                   <h3 className="text-center text-xl font-semibold leading-tight">
-                    Let&apos;s Connect
+                    {`Have a problem worth solving? Let’s talk.`}
                   </h3>
                   <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
                     I&apos;m currently based in the scenic town of Sanquelim,
@@ -878,7 +883,10 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="light:bg-[#f5f5f5] theme-transition border-t border-border py-8 dark:bg-[#121212]">
-        <div className="container mx-auto flex items-center justify-center">
+        <div className="container mx-auto flex flex-col items-center justify-center space-y-2">
+          <p className="text-sm font-medium text-foreground/80">
+            Building tomorrow&apos;s tools—one focused commit at a time.
+          </p>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Shreyas Jamkhandi. All rights reserved.
           </p>
