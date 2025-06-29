@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import { fontSans, fontSerif } from "@/lib/fonts";
@@ -18,14 +18,17 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Shreyas Jamkhandi - Full-Stack Developer & Technical Consultant",
-  description:
-    "Experienced Full-Stack Developer specializing in modern web development, remote work advocate, and technical consultant.",
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
+};
+
+export const metadata: Metadata = {
+  title: "Shreyas Jamkhandi - Full-Stack Developer & Technical Consultant",
+  description:
+    "Experienced Full-Stack Developer specializing in modern web development, remote work advocate, and technical consultant.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
