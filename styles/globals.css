@@ -88,7 +88,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     font-family: var(--font-serif), serif;
     font-size: 1rem;
     line-height: 1.6;
@@ -174,13 +176,18 @@
 
 /* Smooth transitions for theme switching */
 .theme-transition {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Custom hover effects */
 .hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .hover-lift:hover {
   transform: translateY(-4px);
@@ -269,6 +276,53 @@
 
 [data-sonner-toast][data-type="error"] {
   border-left: 4px solid var(--toast-error) !important;
+}
+
+/* More aggressive fix for mobile spacing issue with toaster container */
+[data-sonner-toaster] {
+  position: fixed !important;
+  top: 5rem !important; /* Position below 64px header + some spacing */
+  right: 1rem !important;
+  z-index: 9999 !important; /* Higher than navbar z-50 */
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: 0 !important;
+  overflow: visible !important;
+}
+
+[data-sonner-toaster] * {
+  pointer-events: auto !important;
+}
+
+/* Target all possible toaster-related elements */
+[data-sonner-toaster],
+[aria-label*="Notifications"],
+section[aria-label*="Notifications"] {
+  position: fixed !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Mobile-specific aggressive fixes */
+@media (max-width: 639px) {
+  [data-sonner-toaster],
+  [aria-label*="Notifications"],
+  section[aria-label*="Notifications"] {
+    display: none !important;
+  }
+
+  /* Only show when there are actual toasts */
+  [data-sonner-toaster]:has([data-sonner-toast]),
+  [aria-label*="Notifications"]:has([data-sonner-toast]) {
+    display: block !important;
+    position: fixed !important;
+    top: 5rem !important; /* Position below header on mobile too */
+    right: 1rem !important;
+    z-index: 9999 !important;
+  }
 }
 
 /* Small screen optimizations */

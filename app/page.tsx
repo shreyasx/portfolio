@@ -884,7 +884,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="light:bg-[#f5f5f5] theme-transition border-t border-border py-8 dark:bg-[#121212]">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-2">
-          <p className="text-sm font-medium text-foreground/80">
+          <p className="text-sm font-medium text-foreground/80 text-center">
             Building tomorrow&apos;s tools—one focused commit at a time.
           </p>
           <p className="text-sm text-muted-foreground">
