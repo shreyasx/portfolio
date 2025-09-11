@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-
 import nodemailer from "nodemailer";
 
 // Create a transporter with Gmail credentials
@@ -168,9 +167,9 @@ export async function POST(request: NextRequest) {
     // Email content
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: `build@shreyas.studio`, // Send to yourself
+      to: `shreyasx@protonmail.ch`, // Send to yourself
       subject: `Contact Form: Message from ${name}`,
-      replyTo: `build@shreyas.studio`,
+      replyTo: `shreyasx@protonmail.ch`,
       text: `
         Name: ${name}
         Email: ${email}
