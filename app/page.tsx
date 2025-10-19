@@ -1,12 +1,10 @@
 import Image from "next/image";
-
 import { Cloud, Code, Puzzle } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-import DynamicTenure from "@/components/DynamicTenure";
 import ContactForm from "@/components/contact-form";
+import DynamicTenure from "@/components/DynamicTenure";
 import { HeroButtons } from "@/components/hero-buttons";
 import Navbar from "@/components/navbar";
 
@@ -70,16 +68,7 @@ export default function Home() {
                   hyphens: "none",
                 }}
               >
-                {`I'm a full-stack developer from Sanquelim, Goa, whose compass points toward craftsmanship, autonomy, and the quiet thrill of elegant problem-solving. A 2023 B.E. (Computer Science) graduate of KLS Gogte Institute of Technology, I cut my teeth on freelance builds at `}
-                <a
-                  href="https://www.freelancer.in/u/shreyxs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-primary transition-colors hover:underline"
-                >
-                  freelancer.in
-                </a>
-                {`—earning a steady run of 5-star reviews for shipping clean code on tight timelines.`}
+                {`I'm a full-stack developer based in Whitefield, Bangalore, working remotely. I started out freelancing while in college, building end-to-end solutions and learning how to ship fast without cutting corners. After graduating with a degree in Computer Science, I worked with Finaks on Workforce Software projects, where I learned how to translate real business problems into working systems.`}
               </p>
               <p
                 className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
@@ -88,25 +77,7 @@ export default function Home() {
                   hyphens: "none",
                 }}
               >
-                {`My first post-grad challenge was with Finaks, consulting for Workforce Software, where I secured the PT101 credential while learning to translate business nuance into technical architecture. That appetite for end-to-end ownership brought me to Relso, the place I now call home.`}
-              </p>
-              <p
-                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
-                style={{
-                  wordBreak: "keep-all",
-                  hyphens: "none",
-                }}
-              >
-                {`Today, as Web Architect, I safeguard Relso’s digital estate—from the public site that greets every visitor to RepCorner, the internal nerve-centre our sales & ops teams touch hourly. My remit: keep things lean, lightning-fast, and quietly future-proof.`}
-              </p>
-              <p
-                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
-                style={{
-                  wordBreak: "keep-all",
-                  hyphens: "none",
-                }}
-              >
-                {`Frameworks evolve; judgment endures—so I lean on AI to out-learn yesterday’s best practice and build what’s needed today.`}
+                {`Today, I work at GST Manager, where I maintain everything on the tech side — from internal tools to client-facing products — keeping things reliable, fast, and simple. I use AI tools to stay quick on my feet and build with clarity, not chaos.`}
               </p>
             </div>
           </div>
@@ -240,7 +211,7 @@ export default function Home() {
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
                         <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
                         <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          Basic AWS
+                          AWS
                         </span>
                       </li>
                       <li className="group/item flex items-center gap-3 transition-all duration-300">
@@ -261,7 +232,7 @@ export default function Home() {
         <section id="projects" className="theme-transition bg-secondary py-28">
           <div className="container mx-auto px-4">
             <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
-              Projects
+              Personal Projects
             </h2>
 
             <div className="grid grid-cols-1 gap-16 md:gap-8 lg:grid-cols-2 xl:gap-14">
@@ -349,76 +320,6 @@ export default function Home() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="M12 2H2v10h10V2z"></path>
-                        <path d="M12 12h10v10H12V12z"></path>
-                        <path d="M22 2h-5v5h5V2z"></path>
-                        <path d="M7 17H2v5h5v-5z"></path>
-                      </svg>
-                    </div>
-                    Relso Furniture D2C
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A sophisticated site that began life as a B2B catalogue for
-                    premium Indian furniture in the USA has since been
-                    re-engineered into a Shopify-powered D2C storefront. The
-                    refreshed platform keeps its modern, high-style UI while
-                    relying on Shopify’s native checkout and customer accounts
-                    to manage orders end-to-end, replacing the former Zoho API
-                    layer. I led the redesign, working with non-technical
-                    founders to turn shifting business goals into a seamless
-                    experience that lifts shopper engagement and streamlines
-                    operations.
-                  </p>
-                  <div className="mb-6 flex flex-wrap gap-4">
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Next.js
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TypeScript
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TailwindCSS
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Zoho API
-                    </Badge>
-                  </div>
-                  <div className="border-t border-border/50 pt-2">
-                    <a
-                      href="https://relsofurniture.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
-                    >
-                      Live Site{" "}
-                      <span className="transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card
-                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
-                style={{ animationDelay: "300ms" }}
-              >
-                <CardHeader className="card-header">
-                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
-                    <div className="rounded-full bg-primary/10 p-2 text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
                         <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3Z"></path>
                       </svg>
                     </div>
@@ -467,76 +368,6 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-
-              <Card
-                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
-                style={{ animationDelay: "200ms" }}
-              >
-                <CardHeader className="card-header">
-                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
-                    <div className="rounded-full bg-primary/10 p-2 text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                      </svg>
-                    </div>
-                    Relso Rep-Corner
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A dynamic platform designed to empower company
-                    representatives with efficient workflow management tools.
-                    This application facilitates comprehensive tracking of
-                    inventory, real-time order updates, and integrated customer
-                    record management, all powered by sophisticated Zoho API
-                    integration. The platform plays a crucial role in lead
-                    tracking, invoice management, and product showcasing to
-                    retailers, delivering measurable business value through
-                    improved operational efficiency and enhanced sales team
-                    productivity.
-                  </p>
-                  <div className="mb-6 flex flex-wrap gap-4">
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Next.js
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TypeScript
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      ShadcnUI
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Zoho API
-                    </Badge>
-                  </div>
-                  <div className="border-t border-border/50 pt-2">
-                    <a
-                      href="https://rep.relso.today"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
-                    >
-                      Live Site{" "}
-                      <span className="transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>
@@ -549,7 +380,7 @@ export default function Home() {
             </h2>
 
             <div className="mx-auto grid max-w-4xl grid-cols-1 gap-16">
-              {/* Experience 1 */}
+              {/* Experience 1 - GST Manager */}
               <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 {/* Decorative border accent */}
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
@@ -582,16 +413,106 @@ export default function Home() {
                         </svg>
                       </div>
                       <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
-                        Web Architect
+                        Tech Lead
+                      </h3>
+                      <p className="mb-1 text-sm font-medium text-primary sm:text-base">
+                        @{" "}
+                        <a
+                          href="https://gstmanager.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:underline"
+                        >
+                          GST Manager
+                        </a>
+                      </p>
+                      <p className="text-xs text-muted-foreground sm:text-sm">
+                        October 2025 - Present
+                      </p>
+                      <p className="text-xs font-medium text-muted-foreground sm:text-sm">
+                        <DynamicTenure startDate="2025-10-01" />
+                      </p>
+                    </div>
+
+                    <div className="relative mt-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:col-span-3 md:mt-0 md:pl-8">
+                      <ul className="space-y-4 text-foreground">
+                        <li className="flex items-start">
+                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
+                            Maintain all core systems, from internal tools to
+                            client-facing products.
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
+                            Build fast, reliable solutions that keep the
+                            business running smoothly.
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
+                            Automate repetitive processes and improve
+                            operational workflows.
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
+                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
+                            Work closely with the leadership team to align tech
+                            decisions with business goals.
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Experience 2 - Relso */}
+              <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                {/* Decorative border accent */}
+                <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
+
+                <CardContent className="grid h-full p-8">
+                  <div className="grid h-full grid-cols-1 md:grid-cols-4 md:gap-6">
+                    <div className="md:col-span-1">
+                      <div className="mb-3 inline-flex rounded-full border-2 border-primary/30 bg-primary/10 p-3 text-primary">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <rect
+                            x="2"
+                            y="3"
+                            width="20"
+                            height="14"
+                            rx="2"
+                            ry="2"
+                          ></rect>
+                          <line x1="8" y1="21" x2="16" y2="21"></line>
+                          <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                      </div>
+                      <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
+                        Tech Lead
                       </h3>
                       <p className="mb-1 text-sm font-medium text-primary sm:text-base">
                         @ Relso
                       </p>
                       <p className="text-xs text-muted-foreground sm:text-sm">
-                        March 2024 - Present
+                        March 2024 - October 2025
                       </p>
                       <p className="text-xs font-medium text-muted-foreground sm:text-sm">
-                        <DynamicTenure startDate="2024-03-01" />
+                        1 year 8 months
                       </p>
                     </div>
 
@@ -631,7 +552,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Experience 2 */}
+              {/* Experience 3 */}
               <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 {/* Decorative border accent */}
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
@@ -727,7 +648,7 @@ export default function Home() {
             <Card className="mx-auto max-w-4xl border border-primary/15 bg-card/80">
               <CardContent className="card-content p-8">
                 <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
-                  {`I'm the go-to person when technical challenges rear their heads at Relso. Whether it's 
+                  {`I'm the go-to person when technical challenges rear their heads at GST Manager. Whether it's 
                   troubleshooting a stubborn bug or architecting an entirely new workflow, I thrive on 
                   diagnosing complex issues and creating efficient, sustainable solutions. My goal is always 
                   to minimize downtime, keep projects moving forward, and ensure every user has a seamless 
@@ -764,11 +685,11 @@ export default function Home() {
                     {`Have a problem worth solving? Let’s talk.`}
                   </h3>
                   <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
-                    I&apos;m currently based in the scenic town of Sanquelim,
-                    Goa, and I&apos;ve embraced remote work as my lifestyle of
-                    choice. I&apos;m always open to discussing new projects,
-                    creative ideas, or opportunities — especially those that
-                    align with my passion for flexibility and innovation.
+                    I&apos;m currently based in Whitefield, Bangalore, and
+                    I&apos;ve embraced remote work as my lifestyle of choice.
+                    I&apos;m always open to discussing new projects, creative
+                    ideas, or opportunities — especially those that align with
+                    my passion for flexibility and innovation.
                   </p>
                   <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
                     Want to learn how I can help build your next big thing? Drop
@@ -884,11 +805,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="light:bg-[#f5f5f5] theme-transition border-t border-border py-8 dark:bg-[#121212]">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-2">
-          <p className="text-sm font-medium text-foreground/80 text-center">
+          <p className="text-center text-sm font-medium text-foreground/80">
             Building tomorrow&apos;s tools—one focused commit at a time.
           </p>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Shreyas Jamkhandi. All rights reserved.
+            © {new Date().getFullYear()} Shreyas Jamkhandi. All rights
+            reserved.
           </p>
         </div>
       </footer>
