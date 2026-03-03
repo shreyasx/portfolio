@@ -1,8 +1,5 @@
 import Image from "next/image";
-import { Cloud, Code, Puzzle } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/contact-form";
 import DynamicTenure from "@/components/DynamicTenure";
 import { HeroButtons } from "@/components/hero-buttons";
@@ -11,789 +8,414 @@ import Navbar from "@/components/navbar";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
       <Navbar />
 
       <main>
-        {/* Hero Section */}
-        <section className="dark:hero-gradient-dark light:hero-gradient-light light:from-white light:to-[#f5f5f5] py-14 dark:from-[#121212] dark:to-background sm:py-20 md:py-28">
+        {/* ── Hero ─────────────────────────────────────────────── */}
+        <section className="pb-20 pt-16 sm:pb-28 sm:pt-24 md:pb-36 md:pt-32">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col items-center gap-8 sm:gap-12 md:flex-row md:gap-16">
-              {/* Avatar first on mobile, but second on desktop */}
-              <div className="flex w-full justify-center md:order-2 md:w-2/5">
-                <div className="hover-lift relative size-48 overflow-hidden rounded-full border-4 border-primary/20 shadow-lg sm:size-56 md:size-72 lg:size-80">
+            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:gap-16 lg:gap-24">
+              {/* Text — first on desktop */}
+              <div className="w-full md:w-3/5">
+                <p className="mb-5 font-mono text-xs tracking-[0.2em] text-primary uppercase">
+                  Full-Stack Engineer
+                </p>
+                <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                  Shreyas
+                  <br />
+                  Jamkhandi
+                </h1>
+                <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  I help startups cut noise, ship faster, and build systems that
+                  actually work. First-principles thinking meets AI fire-power.
+                </p>
+                <div className="mt-8">
+                  <HeroButtons />
+                </div>
+              </div>
+
+              {/* Portrait */}
+              <div className="flex w-full justify-center md:w-2/5">
+                <div className="relative aspect-[3/4] w-56 overflow-hidden rounded-sm border border-border/80 sm:w-64 md:w-72 lg:w-80">
                   <Image
                     src="/shreyas.jpg"
                     alt="Shreyas Jamkhandi"
                     fill
-                    sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 288px, 320px"
+                    sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
                     className="object-cover"
                     priority
                   />
                 </div>
               </div>
-              {/* Text second on mobile, but first on desktop */}
-              <div className="w-full animate-fade-up text-center md:order-1 md:w-3/5 md:pl-8 md:text-left">
-                <h1
-                  className="text-lg font-bold text-foreground sm:text-2xl md:text-3xl lg:text-4xl"
-                  style={{ lineHeight: 1.35 }}
-                >
-                  {`Shreyas Jamkhandi → Remote Full-Stack Engineer who pairs first-principles thinking with AI fire-power.`}
-                </h1>
-                <p className="body-text mt-4 max-w-2xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
-                  {`I help businesses cut noise, ship faster, and measure twice before we ship once.`}
-                </p>
-                <div className="mt-6 flex justify-center md:justify-start">
-                  <HeroButtons />
+            </div>
+          </div>
+        </section>
+
+        {/* ── About ────────────────────────────────────────────── */}
+        <section
+          id="about"
+          className="border-t border-border/60 py-20 sm:py-28"
+        >
+          <div className="container mx-auto px-4">
+            <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
+              Background
+            </p>
+            <h2 className="mb-12 text-center font-display text-2xl font-bold md:text-3xl">
+              About Me
+            </h2>
+
+            <div className="mx-auto max-w-3xl space-y-6">
+              <p className="text-base leading-relaxed text-foreground/85 sm:text-lg">
+                {`I'm a full-stack developer based in Bangalore, working fully remote. I started out freelancing while in college — building end-to-end solutions and learning how to ship fast without cutting corners. After graduating with a degree in Computer Science, I joined Relso as their first engineering hire, where I led development from scratch and learned what it takes to build real products under startup constraints.`}
+              </p>
+              <p className="text-base leading-relaxed text-foreground/85 sm:text-lg">
+                {`Today, I work at GST Manager, where I own everything on the tech side — from internal tools to client-facing products — keeping things reliable, fast, and simple. I use AI tools to stay quick on my feet and build with clarity, not chaos.`}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Skills ───────────────────────────────────────────── */}
+        <section
+          id="skills"
+          className="border-t border-border/60 bg-card py-20 sm:py-28"
+        >
+          <div className="container mx-auto px-4">
+            <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
+              What I Work With
+            </p>
+            <h2 className="mb-4 text-center font-display text-2xl font-bold md:text-3xl">
+              Tool Belt
+            </h2>
+            <p className="mx-auto mb-16 max-w-2xl text-center text-base text-muted-foreground">
+              Tools are transient. I stay dangerous by pairing core fundamentals
+              with AI copilots that cut ramp-up time to near-zero.
+            </p>
+
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+              {/* Core */}
+              <div>
+                <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
+                  Core Stack
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "JavaScript / TypeScript",
+                    "React & Next.js",
+                    "Node.js & Express",
+                    "TailwindCSS",
+                    "SQL & NoSQL",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm text-foreground/80"
+                    >
+                      <span className="block size-1 rounded-full bg-primary/60" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Integrations */}
+              <div>
+                <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
+                  Integrations
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Shopify & Zoho",
+                    "REST & GraphQL",
+                    "Third-party APIs",
+                    "Payment Gateways",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm text-foreground/80"
+                    >
+                      <span className="block size-1 rounded-full bg-primary/60" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Infra */}
+              <div>
+                <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
+                  Infrastructure
+                </h3>
+                <ul className="space-y-3">
+                  {["Docker", "AWS", "Kubernetes", "CI/CD Pipelines"].map(
+                    (item) => (
+                      <li
+                        key={item}
+                        className="flex items-center gap-3 text-sm text-foreground/80"
+                      >
+                        <span className="block size-1 rounded-full bg-primary/60" />
+                        {item}
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Experience ───────────────────────────────────────── */}
+        <section
+          id="experience"
+          className="border-t border-border/60 py-20 sm:py-28"
+        >
+          <div className="container mx-auto px-4">
+            <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
+              Where I&apos;ve Been
+            </p>
+            <h2 className="mb-16 text-center font-display text-2xl font-bold md:text-3xl">
+              Experience
+            </h2>
+
+            <div className="mx-auto max-w-3xl space-y-16">
+              {/* GST Manager */}
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-[200px_1fr] md:gap-10">
+                <div className="space-y-1">
+                  <p className="font-mono text-xs tracking-wider text-muted-foreground">
+                    Oct 2025 &mdash; Present
+                  </p>
+                  <p className="font-mono text-xs text-muted-foreground">
+                    <DynamicTenure startDate="2025-10-01" className="text-xs" />
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold sm:text-xl">
+                    Tech Lead
+                  </h3>
+                  <p className="mb-4 text-sm text-primary">
+                    <a
+                      href="https://gstmanager.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary/80"
+                    >
+                      GST Manager
+                    </a>
+                  </p>
+                  <ul className="space-y-2.5">
+                    {[
+                      "Own all core systems — internal tools and client-facing products.",
+                      "Build fast, reliable solutions that keep the business running smoothly.",
+                      "Automate repetitive processes and improve operational workflows.",
+                      "Work closely with leadership to align tech decisions with business goals.",
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80"
+                      >
+                        <span className="mt-2 block size-1 shrink-0 rounded-full bg-primary/50" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="mx-auto w-8 border-t border-border" />
+
+              {/* Relso */}
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-[200px_1fr] md:gap-10">
+                <div className="space-y-1">
+                  <p className="font-mono text-xs tracking-wider text-muted-foreground">
+                    Mar 2024 &mdash; Oct 2025
+                  </p>
+                  <p className="font-mono text-xs text-muted-foreground">
+                    1 year 8 months
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold sm:text-xl">
+                    Tech Lead
+                  </h3>
+                  <p className="mb-4 text-sm text-primary">Relso</p>
+                  <ul className="space-y-2.5">
+                    {[
+                      "Led development on Relso's primary web platforms, fully remote.",
+                      "Unified multiple projects under one Turborepo monorepo for scalability.",
+                      "Built modern UI components, integrated APIs, and enhanced product workflows.",
+                      "Streamlined customer acquisition and improved data accuracy.",
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80"
+                      >
+                        <span className="mt-2 block size-1 shrink-0 rounded-full bg-primary/50" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* About Section */}
-        <section
-          id="about"
-          className="theme-transition bg-secondary py-20 sm:py-24 md:py-28"
-        >
-          <div className="container mx-auto animate-fade-up px-4">
-            <h2 className="mb-8 text-center text-xl font-bold leading-tight sm:mb-10 sm:text-2xl md:mb-12 md:text-3xl">
-              About Me
-            </h2>
-            <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
-              <p
-                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
-                style={{
-                  wordBreak: "keep-all",
-                  hyphens: "none",
-                }}
-              >
-                {`I'm a full-stack developer based in Whitefield, Bangalore, working remotely. I started out freelancing while in college, building end-to-end solutions and learning how to ship fast without cutting corners. After graduating with a degree in Computer Science, I worked with Finaks on Workforce Software projects, where I learned how to translate real business problems into working systems.`}
-              </p>
-              <p
-                className="body-text text-center text-sm leading-relaxed text-foreground/90 sm:text-base md:text-lg"
-                style={{
-                  wordBreak: "keep-all",
-                  hyphens: "none",
-                }}
-              >
-                {`Today, I work at GST Manager, where I maintain everything on the tech side — from internal tools to client-facing products — keeping things reliable, fast, and simple. I use AI tools to stay quick on my feet and build with clarity, not chaos.`}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="theme-transition bg-background py-28">
+        {/* ── Operating Principles ─────────────────────────────── */}
+        <section className="border-t border-border/60 bg-card py-20 sm:py-28">
           <div className="container mx-auto px-4">
-            <h2 className="mb-4 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
-              Tool Belt & Working Style
-            </h2>
-
-            <p className="mx-auto mb-16 max-w-3xl animate-fade-up text-center text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
-              Tools are transient; I stay dangerous by pairing core fundamentals
-              with AI copilots that cut ramp-up time to near-zero.
+            <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
+              How I Work
             </p>
-
-            <div className="skills-grid grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* Core Technologies */}
-              <div
-                className="group animate-fade-up"
-                style={{ animationDelay: "100ms" }}
-              >
-                <Card className="skills-card h-full border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover">
-                  <CardHeader className="pb-2">
-                    <div className="mb-2 flex items-center gap-3">
-                      <div className="skill-icon-container rounded-full bg-primary/10 p-3 text-primary transition-all duration-300 group-hover:bg-primary/20">
-                        <Code className="skill-icon size-6" />
-                      </div>
-                      <CardTitle className="py-5 text-xl leading-tight text-foreground">
-                        Core Technologies
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-2">
-                    <ul className="space-y-4">
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          JavaScript, TypeScript
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          React, Next.js, Node.js, Express
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          TailwindCSS, CSS-in-JS
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          SQL & NoSQL Databases
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Integrations & APIs */}
-              <div
-                className="group animate-fade-up"
-                style={{ animationDelay: "200ms" }}
-              >
-                <Card className="skills-card h-full border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover">
-                  <CardHeader className="pb-2">
-                    <div className="mb-2 flex items-center gap-3">
-                      <div className="skill-icon-container rounded-full bg-primary/10 p-3 text-primary transition-all duration-300 group-hover:bg-primary/20">
-                        <Puzzle className="skill-icon size-6" />
-                      </div>
-                      <CardTitle className="py-5 text-xl leading-tight text-foreground">
-                        Integrations & APIs
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-2">
-                    <ul className="space-y-4">
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          Shopify, Zoho
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          REST & GraphQL
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          Third-party API Integrations
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Cloud & DevOps */}
-              <div
-                className="group animate-fade-up"
-                style={{ animationDelay: "300ms" }}
-              >
-                <Card className="skills-card h-full border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover">
-                  <CardHeader className="pb-2">
-                    <div className="mb-2 flex items-center gap-3">
-                      <div className="skill-icon-container rounded-full bg-primary/10 p-3 text-primary transition-all duration-300 group-hover:bg-primary/20">
-                        <Cloud className="skill-icon size-6" />
-                      </div>
-                      <CardTitle className="py-5 text-xl leading-tight text-foreground">
-                        Cloud & DevOps
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-2">
-                    <ul className="space-y-4">
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          Docker
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          AWS
-                        </span>
-                      </li>
-                      <li className="group/item flex items-center gap-3 transition-all duration-300">
-                        <div className="size-1.5 shrink-0 rounded-full bg-primary transition-transform group-hover/item:scale-125"></div>
-                        <span className="body-text text-sm leading-relaxed text-foreground transition-colors group-hover/item:text-primary sm:text-base md:text-lg">
-                          Kubernetes
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="theme-transition bg-secondary py-28">
-          <div className="container mx-auto px-4">
-            <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
-              Personal Projects
-            </h2>
-
-            <div className="grid grid-cols-1 gap-16 md:gap-8 lg:grid-cols-2 xl:gap-14">
-              <Card
-                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
-                style={{ animationDelay: "400ms" }}
-              >
-                <CardHeader className="card-header">
-                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
-                    <div className="rounded-full bg-primary/10 p-2 text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path>
-                      </svg>
-                    </div>
-                    StoreScore
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A production-grade analytics app now live on the Shopify App
-                    Store. StoreScore wires into the WebPixel API to log every
-                    storefront touchpoint—add-to-cart clicks, checkout steps,
-                    abandonments, and conversions—and translates the stream into
-                    a clear, action-ready dashboard. I built the pixel script,
-                    event pipeline, and admin UI end-to-end, steering the
-                    project through Shopify’s rigorous review to public launch
-                    and giving merchants an elegant way to spot leaks and grow
-                    revenue.
-                  </p>
-                  <div className="mb-6 flex flex-wrap gap-4">
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Typescript
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Next.js
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TailwindCSS
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Shopify App
-                    </Badge>
-                  </div>
-                  <div className="border-t border-border/50 pt-2">
-                    <a
-                      href="https://apps.shopify.com/storescore"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
-                    >
-                      Shopify App Store{" "}
-                      <span className="transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card
-                className="animate-fade-up border border-primary/20 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
-                style={{ animationDelay: "100ms" }}
-              >
-                <CardHeader className="card-header">
-                  <CardTitle className="card-title flex items-center gap-3 text-xl leading-tight">
-                    <div className="rounded-full bg-primary/10 p-2 text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3Z"></path>
-                      </svg>
-                    </div>
-                    Freelance Website for a Game Designer
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="card-content">
-                  <p className="body-text mb-6 px-4 text-sm leading-relaxed text-foreground sm:text-justify">
-                    A creatively designed freelance project that showcases a
-                    game designer&apos;s portfolio with distinctive flair. The
-                    site features a stylish, game-inspired user interface
-                    meticulously crafted to effectively highlight the
-                    designer&apos;s professional experience and creative works.
-                    The project embraces innovative design approaches and modern
-                    aesthetics that reflect the designer&apos;s unique style
-                    while maintaining usability and engagement, resulting in a
-                    compelling digital portfolio that stands out in a
-                    competitive industry.
-                  </p>
-                  <div className="mb-6 flex flex-wrap gap-4">
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Next.js
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TypeScript
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      TailwindCSS
-                    </Badge>
-                    <Badge className="border-none bg-primary/15 px-3 py-1 text-foreground hover:bg-primary/20">
-                      Framer Motion
-                    </Badge>
-                  </div>
-                  <div className="border-t border-border/50 pt-2">
-                    <a
-                      href="https://rohan-agarwal.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 font-medium text-primary hover:underline"
-                    >
-                      Live Site{" "}
-                      <span className="transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Experience Section */}
-        <section id="experience" className="bg-background py-28">
-          <div className="container mx-auto px-4">
-            <h2 className="mb-16 text-center text-2xl font-bold leading-tight md:text-3xl">
-              Experience
-            </h2>
-
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-16">
-              {/* Experience 1 - GST Manager */}
-              <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                {/* Decorative border accent */}
-                <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
-
-                <CardContent className="grid h-full p-8">
-                  <div className="grid h-full grid-cols-1 md:grid-cols-4 md:gap-6">
-                    <div className="md:col-span-1">
-                      <div className="mb-3 inline-flex rounded-full border-2 border-primary/30 bg-primary/10 p-3 text-primary">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <rect
-                            x="2"
-                            y="3"
-                            width="20"
-                            height="14"
-                            rx="2"
-                            ry="2"
-                          ></rect>
-                          <line x1="8" y1="21" x2="16" y2="21"></line>
-                          <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                      </div>
-                      <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
-                        Tech Lead
-                      </h3>
-                      <p className="mb-1 text-sm font-medium text-primary sm:text-base">
-                        @{" "}
-                        <a
-                          href="https://gstmanager.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-colors hover:underline"
-                        >
-                          GST Manager
-                        </a>
-                      </p>
-                      <p className="text-xs text-muted-foreground sm:text-sm">
-                        October 2025 - Present
-                      </p>
-                      <p className="text-xs font-medium text-muted-foreground sm:text-sm">
-                        <DynamicTenure startDate="2025-10-01" />
-                      </p>
-                    </div>
-
-                    <div className="relative mt-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:col-span-3 md:mt-0 md:pl-8">
-                      <ul className="space-y-4 text-foreground">
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Maintain all core systems, from internal tools to
-                            client-facing products.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Build fast, reliable solutions that keep the
-                            business running smoothly.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Automate repetitive processes and improve
-                            operational workflows.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Work closely with the leadership team to align tech
-                            decisions with business goals.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Experience 2 - Relso */}
-              <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                {/* Decorative border accent */}
-                <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
-
-                <CardContent className="grid h-full p-8">
-                  <div className="grid h-full grid-cols-1 md:grid-cols-4 md:gap-6">
-                    <div className="md:col-span-1">
-                      <div className="mb-3 inline-flex rounded-full border-2 border-primary/30 bg-primary/10 p-3 text-primary">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <rect
-                            x="2"
-                            y="3"
-                            width="20"
-                            height="14"
-                            rx="2"
-                            ry="2"
-                          ></rect>
-                          <line x1="8" y1="21" x2="16" y2="21"></line>
-                          <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                      </div>
-                      <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
-                        Tech Lead
-                      </h3>
-                      <p className="mb-1 text-sm font-medium text-primary sm:text-base">
-                        @ Relso
-                      </p>
-                      <p className="text-xs text-muted-foreground sm:text-sm">
-                        March 2024 - October 2025
-                      </p>
-                      <p className="text-xs font-medium text-muted-foreground sm:text-sm">
-                        1 year 8 months
-                      </p>
-                    </div>
-
-                    <div className="relative mt-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:col-span-3 md:mt-0 md:pl-8">
-                      <ul className="space-y-4 text-foreground">
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Enjoying full remote flexibility while leading
-                            development on Relso&apos;s primary web platforms.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Unifying multiple projects under one Turborepo
-                            monorepo to improve scalability and consistency.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Implementing modern UI components, integrating APIs,
-                            and enhancing product workflows.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Streamlined customer acquisition processes and
-                            increased data accuracy.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Experience 3 */}
-              <Card className="relative min-h-[350px] overflow-hidden border border-primary/30 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                {/* Decorative border accent */}
-                <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/80 to-primary/30"></div>
-
-                <CardContent className="grid h-full p-8">
-                  <div className="grid h-full grid-cols-1 md:grid-cols-4 md:gap-6">
-                    <div className="md:col-span-1">
-                      <div className="mb-3 inline-flex rounded-full border-2 border-primary/30 bg-primary/10 p-3 text-primary">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                          <rect
-                            x="8"
-                            y="2"
-                            width="8"
-                            height="4"
-                            rx="1"
-                            ry="1"
-                          ></rect>
-                          <path d="M15 11h-6"></path>
-                          <path d="M15 15h-6"></path>
-                          <path d="M15 19h-6"></path>
-                        </svg>
-                      </div>
-                      <h3 className="mb-2 text-base font-bold leading-tight text-foreground sm:text-lg md:text-xl">
-                        Associate Technical Consultant Intern
-                      </h3>
-                      <p className="mb-1 text-sm font-medium text-primary sm:text-base">
-                        @ Finaks
-                      </p>
-                      <p className="text-xs text-muted-foreground sm:text-sm">
-                        August 2023 - February 2024
-                      </p>
-                      <p className="text-xs font-medium text-muted-foreground sm:text-sm">
-                        7 months
-                      </p>
-                    </div>
-
-                    <div className="relative mt-6 before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-primary/20 md:col-span-3 md:mt-0 md:pl-8">
-                      <ul className="space-y-4 text-foreground">
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Collaborated with cross-functional teams to deliver
-                            solutions for Workforce Software.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Earned the PT101 certification, a milestone in
-                            technical consulting excellence.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Assisted in solution architecture, documentation,
-                            and implementation.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="mr-4 mt-1.5 size-3 shrink-0 rounded-full border border-primary/30 bg-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]"></div>
-                          <span className="body-text text-sm leading-relaxed sm:text-base md:text-lg">
-                            Supported senior consultants on major project
-                            deliverables.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Problem Solving Section */}
-        <section id="problem-solving" className="bg-secondary py-28">
-          <div className="container mx-auto px-4">
-            <h2 className="mb-12 text-center text-2xl font-bold leading-tight md:text-3xl">
+            <h2 className="mb-12 text-center font-display text-2xl font-bold md:text-3xl">
               Operating Principles
             </h2>
-            <Card className="mx-auto max-w-4xl border border-primary/15 bg-card/80">
-              <CardContent className="card-content p-8">
-                <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
-                  {`I'm the go-to person when technical challenges rear their heads at GST Manager. Whether it's 
-                  troubleshooting a stubborn bug or architecting an entirely new workflow, I thrive on 
-                  diagnosing complex issues and creating efficient, sustainable solutions. My goal is always 
-                  to minimize downtime, keep projects moving forward, and ensure every user has a seamless 
-                  experience—no matter how big the challenge.`}
-                </p>
-              </CardContent>
-            </Card>
+            <div className="mx-auto max-w-3xl rounded-sm border border-border/60 bg-card p-6 sm:p-8">
+              <p className="text-sm leading-relaxed text-foreground/80 sm:text-base">
+                {`I'm the go-to person when technical challenges surface. Whether it's debugging a stubborn issue or architecting an entirely new workflow, I thrive on diagnosing complex problems and shipping efficient, sustainable solutions. The goal is always the same — minimize downtime, keep momentum, and make sure every user has a seamless experience.`}
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="theme-transition bg-background py-28">
+        {/* ── Contact ──────────────────────────────────────────── */}
+        <section
+          id="contact"
+          className="border-t border-border/60 py-20 sm:py-28"
+        >
           <div className="container mx-auto px-4">
-            <h2 className="mb-16 animate-fade-up text-center text-2xl font-bold leading-tight md:text-3xl">
+            <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
+              Let&apos;s Connect
+            </p>
+            <h2 className="mb-16 text-center font-display text-2xl font-bold md:text-3xl">
               Get in Touch
             </h2>
 
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-              {/* Contact Form */}
-              <div
-                className="animate-fade-up space-y-6"
-                style={{ animationDelay: "100ms" }}
-              >
-                <h3 className="text-xl font-semibold leading-tight">
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
+              {/* Form */}
+              <div>
+                <h3 className="mb-6 font-display text-lg font-semibold">
                   Drop a Line
                 </h3>
                 <ContactForm />
               </div>
 
-              {/* Contact Info with enhanced styling */}
-              <div className="flex flex-col justify-center space-y-8">
-                <div className="space-y-6">
-                  <h3 className="text-center text-xl font-semibold leading-tight">
-                    {`Have a problem worth solving? Let’s talk.`}
+              {/* Info */}
+              <div className="flex flex-col justify-between">
+                <div className="space-y-5">
+                  <h3 className="font-display text-lg font-semibold">
+                    {`Have a problem worth solving?`}
                   </h3>
-                  <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
-                    I&apos;m currently based in Whitefield, Bangalore, and
-                    I&apos;ve embraced remote work as my lifestyle of choice.
-                    I&apos;m always open to discussing new projects, creative
-                    ideas, or opportunities — especially those that align with
-                    my passion for flexibility and innovation.
-                  </p>
-                  <p className="body-text text-sm leading-relaxed text-foreground sm:text-justify">
-                    Want to learn how I can help build your next big thing? Drop
-                    a message or reach out on my social channels—I&apos;ll do my
-                    best to get back to you promptly!
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Based in Bangalore, working remote. Always open to
+                    discussing new projects, creative ideas, or
+                    opportunities&nbsp;&mdash; especially ones that move fast
+                    and break the right things.
                   </p>
                 </div>
 
-                <div className="mt-8 flex flex-col items-center">
-                  <h4 className="text-xl font-medium">Find me on</h4>
-                  <div className="mt-4 flex gap-6">
-                    <a
-                      href="mailto:shreyxs@gmail.com"
-                      className="transition-transform hover:scale-110"
-                      title="Email me"
-                    >
-                      <div className="flex size-14 items-center justify-center rounded-full bg-primary/15 text-primary transition-colors hover:bg-primary/25">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                          <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                      </div>
-                    </a>
-                    <a
-                      href="https://linkedin.com/in/shreyasx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-transform hover:scale-110"
-                      title="Connect on LinkedIn"
-                    >
-                      <div className="flex size-14 items-center justify-center rounded-full bg-primary/15 text-primary transition-colors hover:bg-primary/25">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                          <rect x="2" y="9" width="4" height="12"></rect>
-                          <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                      </div>
-                    </a>
-                    <a
-                      href="https://github.com/shreyasx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-transform hover:scale-110"
-                      title="View my GitHub"
-                    >
-                      <div className="flex size-14 items-center justify-center rounded-full bg-primary/15 text-primary transition-colors hover:bg-primary/25">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                      </div>
-                    </a>
-                    <a
-                      href="https://x.com/shreyxs"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-transform hover:scale-110"
-                      title="Follow me on Twitter/X"
-                    >
-                      <div className="flex size-14 items-center justify-center rounded-full bg-primary/15 text-primary transition-colors hover:bg-primary/25">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                        </svg>
-                      </div>
-                    </a>
+                <div className="mt-10">
+                  <p className="mb-4 font-mono text-xs tracking-[0.15em] text-muted-foreground uppercase">
+                    Find me on
+                  </p>
+                  <div className="flex gap-4">
+                    {[
+                      {
+                        href: "mailto:shreyxs@gmail.com",
+                        label: "Email",
+                        icon: (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        href: "https://linkedin.com/in/shreyasx",
+                        label: "LinkedIn",
+                        icon: (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        href: "https://github.com/shreyasx",
+                        label: "GitHub",
+                        icon: (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        href: "https://x.com/shreyxs",
+                        label: "X",
+                        icon: (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                          </svg>
+                        ),
+                      },
+                    ].map(({ href, label, icon }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        target={
+                          href.startsWith("mailto") ? undefined : "_blank"
+                        }
+                        rel={
+                          href.startsWith("mailto")
+                            ? undefined
+                            : "noopener noreferrer"
+                        }
+                        className="flex size-11 items-center justify-center rounded-sm border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                        title={label}
+                      >
+                        {icon}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -802,15 +424,11 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="light:bg-[#f5f5f5] theme-transition border-t border-border py-8 dark:bg-[#121212]">
-        <div className="container mx-auto flex flex-col items-center justify-center space-y-2">
-          <p className="text-center text-sm font-medium text-foreground/80">
-            Building tomorrow&apos;s tools—one focused commit at a time.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Shreyas Jamkhandi. All rights
-            reserved.
+      {/* ── Footer ───────────────────────────────────────────── */}
+      <footer className="border-t border-border/60 py-8">
+        <div className="container mx-auto flex flex-col items-center gap-1">
+          <p className="text-center text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} Shreyas Jamkhandi
           </p>
         </div>
       </footer>

@@ -9,7 +9,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
@@ -53,13 +53,14 @@ module.exports = {
         },
       },
       borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Inter", "var(--font-sans)", ...fontFamily.sans],
-        serif: ["IBM Plex Serif", "var(--font-serif)", ...fontFamily.serif],
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+        display: ["var(--font-display)", "var(--font-sans)", ...fontFamily.sans],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
       },
       keyframes: {
         "accordion-down": {
@@ -74,30 +75,16 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
-        "fade-up": {
-          "0%": { opacity: 0, transform: "translateY(20px)" },
+        "slide-up": {
+          "0%": { opacity: 0, transform: "translateY(16px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out",
-        "fade-up": "fade-up 0.5s ease-out",
-      },
-      boxShadow: {
-        hover: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-      },
-      transitionProperty: {
-        height: "height",
-        spacing: "margin, padding",
-      },
-      transitionDuration: {
-        250: "250ms",
-        300: "300ms",
-      },
-      transitionTimingFunction: {
-        "in-out-soft": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "slide-up": "slide-up 0.6s ease-out forwards",
       },
     },
   },

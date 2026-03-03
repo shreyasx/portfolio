@@ -1,9 +1,8 @@
 import "@/styles/globals.css";
 
 import { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 
-import { fontSans, fontSerif } from "@/lib/fonts";
+import { fontSans, fontDisplay, fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -11,24 +10,17 @@ import { Toaster } from "@/components/ui/toaster";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 
-// Load Inter font
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#faf8f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f0e0d" },
   ],
 };
 
 export const metadata: Metadata = {
-  title: "Shreyas Jamkhandi - Full-Stack Developer & Technical Consultant",
+  title: "Shreyas Jamkhandi — Full-Stack Engineer",
   description:
-    "Experienced Full-Stack Developer specializing in modern web development, remote work advocate, and technical consultant.",
+    "Full-stack engineer building products at startups. Remote-first, result-oriented, shipping fast.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -46,7 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html
         lang="en"
         suppressHydrationWarning
-        className={`${inter.variable} ${fontSerif.variable}`}
+        className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable}`}
       >
         <head>
           <script
@@ -54,16 +46,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
               __html: `
                 (function() {
                   try {
-                    // Check for saved theme
                     const theme = localStorage.getItem('theme');
-                    
-                    // If no theme is saved or it's 'dark', set dark mode
                     if (!theme || theme === 'dark') {
                       document.documentElement.classList.add('dark');
                       document.documentElement.style.colorScheme = 'dark';
                     }
                   } catch (e) {
-                    // Default to dark if localStorage is not available
                     document.documentElement.classList.add('dark');
                     document.documentElement.style.colorScheme = 'dark';
                   }
@@ -74,9 +62,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           className={cn(
-            "theme-transition min-h-screen bg-background antialiased",
+            "noise-bg theme-transition min-h-screen bg-background antialiased",
             fontSans.variable,
-            fontSerif.variable
+            fontDisplay.variable,
+            fontMono.variable
           )}
         >
           <ThemeProvider
@@ -84,7 +73,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             defaultTheme="dark"
             enableSystem={false}
           >
-            <div className="relative flex min-h-screen flex-col">
+            <div className="relative z-10 flex min-h-screen flex-col">
               {children}
             </div>
             <Toaster />

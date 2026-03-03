@@ -1,7 +1,7 @@
 import {
   JetBrains_Mono as FontMono,
-  Inter as FontSans,
-  IBM_Plex_Serif as FontSerif,
+  DM_Sans as FontSans,
+  Syne as FontDisplay,
 } from "next/font/google";
 
 export const fontSans = FontSans({
@@ -14,8 +14,8 @@ export const fontMono = FontMono({
   variable: "--font-mono",
 });
 
-export const fontSerif = FontSerif({
+export const fontDisplay = FontDisplay({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-serif",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
 });

@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-// Form validation schema
 const contactFormSchema = z.object({
   name: z
     .string()
@@ -50,9 +49,7 @@ export default function ContactForm() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
@@ -62,13 +59,9 @@ export default function ContactForm() {
         throw new Error(result.message || "Something went wrong");
       }
 
-      // Show success message
       toast.success("Message sent successfully! I'll get back to you soon.");
-
-      // Reset form
       reset();
     } catch (error) {
-      // Show error message
       toast.error(
         error instanceof Error
           ? error.message
@@ -80,71 +73,65 @@ export default function ContactForm() {
   };
 
   return (
-    <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-1 sm:space-y-2">
-        <Label htmlFor="name" className="text-sm sm:text-base">
+    <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
+      <div className="space-y-1.5">
+        <Label htmlFor="name" className="text-sm font-medium text-foreground/70">
           Name
         </Label>
         <Input
           id="name"
           type="text"
-          className={`h-10 border-border/50 bg-secondary/70 text-sm text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:h-11 sm:text-base ${
+          className={`h-11 border-border bg-muted/50 text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary/30 ${
             errors.name ? "border-red-500" : ""
           }`}
           {...register("name")}
           disabled={isSubmitting}
         />
         {errors.name && (
-          <p className="mt-1 text-xs text-red-500 sm:text-sm">
-            {errors.name.message}
-          </p>
+          <p className="text-xs text-red-500">{errors.name.message}</p>
         )}
       </div>
 
-      <div className="space-y-1 sm:space-y-2">
-        <Label htmlFor="email" className="text-sm sm:text-base">
+      <div className="space-y-1.5">
+        <Label htmlFor="email" className="text-sm font-medium text-foreground/70">
           Email
         </Label>
         <Input
           id="email"
           type="email"
-          className={`h-10 border-border/50 bg-secondary/70 text-sm text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:h-11 sm:text-base ${
+          className={`h-11 border-border bg-muted/50 text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary/30 ${
             errors.email ? "border-red-500" : ""
           }`}
           {...register("email")}
           disabled={isSubmitting}
         />
         {errors.email && (
-          <p className="mt-1 text-xs text-red-500 sm:text-sm">
-            {errors.email.message}
-          </p>
+          <p className="text-xs text-red-500">{errors.email.message}</p>
         )}
       </div>
 
-      <div className="space-y-1 sm:space-y-2">
-        <Label htmlFor="message" className="text-sm sm:text-base">
+      <div className="space-y-1.5">
+        <Label htmlFor="message" className="text-sm font-medium text-foreground/70">
           Message
         </Label>
         <Textarea
           id="message"
           rows={4}
-          className={`border-border/50 bg-secondary/70 text-sm text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-base ${
+          className={`border-border bg-muted/50 text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary/30 ${
             errors.message ? "border-red-500" : ""
           }`}
           {...register("message")}
           disabled={isSubmitting}
         />
         {errors.message && (
-          <p className="mt-1 text-xs text-red-500 sm:text-sm">
-            {errors.message.message}
-          </p>
+          <p className="text-xs text-red-500">{errors.message.message}</p>
         )}
       </div>
 
       <Button
         type="submit"
         size="lg"
-        className="hover-lift mt-2 w-full py-2 text-sm font-medium sm:mt-4 sm:py-3 sm:text-base"
+        className="w-full rounded-md font-medium"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Send Message"}

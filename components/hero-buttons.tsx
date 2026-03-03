@@ -16,18 +16,18 @@ export function HeroButtons() {
 
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 64, // Adjust for navbar height
+        top: element.offsetTop - 72,
         behavior: "smooth",
       });
     }
   };
 
   return (
-    <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-6">
+    <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
       <Button
         asChild
         size="lg"
-        className="hover-lift w-full rounded-md px-6 font-medium sm:w-auto sm:px-8"
+        className="rounded-md bg-primary px-7 font-medium text-primary-foreground transition-all hover:bg-primary/85"
       >
         <Link href="#projects" onClick={(e) => handleScrollTo(e, "#projects")}>
           View My Work
@@ -37,7 +37,7 @@ export function HeroButtons() {
         asChild
         variant="outline"
         size="lg"
-        className="hover-lift w-full rounded-md border-primary/30 px-6 font-medium hover:border-primary/50 hover:bg-primary/10 sm:w-auto sm:px-8"
+        className="rounded-md border-border px-7 font-medium text-foreground transition-all hover:border-primary/50 hover:text-primary"
       >
         <Link href="#contact" onClick={(e) => handleScrollTo(e, "#contact")}>
           Get in Touch

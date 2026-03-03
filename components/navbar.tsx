@@ -1,12 +1,17 @@
 "use client";
 
 import { useCallback, useState } from "react";
-
 import Link from "next/link";
-
 import { MenuIcon, X } from "lucide-react";
 
 import { ThemeToggle } from "./theme-toggle";
+
+const NAV_ITEMS = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +21,7 @@ export default function Navbar() {
       e.preventDefault();
 
       if (href === "/") {
-        // Scroll to top when clicking the logo
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
@@ -29,88 +30,68 @@ export default function Navbar() {
 
       if (element) {
         window.scrollTo({
-          top: element.offsetTop - 64, // Adjust for navbar height
+          top: element.offsetTop - 72,
           behavior: "smooth",
         });
       }
 
-      // Close mobile menu after clicking a link
       setIsMenuOpen(false);
     },
     []
   );
 
   return (
-    <header className="theme-transition sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center">
-          <Link
-            href="/"
-            onClick={(e) => handleScrollTo(e, "/")}
-            className="flex items-center space-x-2 transition-colors hover:text-primary"
-          >
-            <span className="hidden text-lg font-bold leading-none sm:inline-block md:text-xl">
-              Shreyas Jamkhandi
-            </span>
-            <span className="text-lg font-bold leading-none sm:hidden">SJ</span>
-          </Link>
-        </div>
+    <header className="theme-transition sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <div className="container flex h-[4.5rem] items-center justify-between">
+        <Link
+          href="/"
+          onClick={(e) => handleScrollTo(e, "/")}
+          className="font-display text-lg font-bold tracking-tight transition-colors hover:text-primary"
+        >
+          <span className="hidden sm:inline">Shreyas Jamkhandi</span>
+          <span className="sm:hidden">SJ</span>
+        </Link>
 
-        {/* Mobile menu button */}
-        <div className="flex items-center md:hidden">
-          <div className="flex size-9 items-center justify-center">
-            <ThemeToggle />
-          </div>
+        {/* Mobile */}
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
           <button
-            className="ml-4 flex size-9 items-center justify-center text-foreground"
+            className="flex size-10 items-center justify-center text-foreground/70"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
+            {isMenuOpen ? <X size={20} /> : <MenuIcon size={20} />}
           </button>
         </div>
 
-        {/* Desktop navigation */}
-        <nav className="hidden items-center justify-end space-x-6 text-base font-medium md:flex md:space-x-8">
-          {[
-            { href: "#about", label: "About" },
-            { href: "#skills", label: "Skills" },
-            { href: "#projects", label: "Projects" },
-            { href: "#experience", label: "Experience" },
-            { href: "#contact", label: "Contact" },
-          ].map(({ href, label }) => (
+        {/* Desktop */}
+        <nav className="hidden items-center gap-8 md:flex">
+          {NAV_ITEMS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={(e) => handleScrollTo(e, href)}
-              className="group relative flex h-16 items-center text-foreground/70 transition-colors duration-250 ease-in-out-soft hover:text-primary"
+              className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               {label}
-              <span className="absolute inset-x-0 bottom-0 h-0.5 origin-center scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           ))}
-          <div className="ml-2 flex size-9 items-center justify-center">
+          <div className="ml-2">
             <ThemeToggle />
           </div>
         </nav>
       </div>
 
-      {/* Mobile navigation menu */}
+      {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="absolute inset-x-0 top-16 z-50 border-b border-border/40 bg-background/95 p-4 shadow-md backdrop-blur supports-[backdrop-filter]:bg-background/80 md:hidden">
-          <nav className="flex flex-col space-y-4 py-2">
-            {[
-              { href: "#about", label: "About" },
-              { href: "#skills", label: "Skills" },
-              { href: "#projects", label: "Projects" },
-              { href: "#experience", label: "Experience" },
-              { href: "#contact", label: "Contact" },
-            ].map(({ href, label }) => (
+        <div className="absolute inset-x-0 top-[4.5rem] z-50 border-b border-border/60 bg-background/95 backdrop-blur-xl md:hidden">
+          <nav className="container flex flex-col gap-1 py-4">
+            {NAV_ITEMS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={(e) => handleScrollTo(e, href)}
-                className="block py-2 text-foreground/80 transition-colors hover:text-primary"
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 {label}
               </Link>
