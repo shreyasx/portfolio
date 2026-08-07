@@ -17,14 +17,41 @@ export const viewport: Viewport = {
   ],
 };
 
+const SITE_URL = "https://shreyasx.netlify.app";
+const TITLE = "Shreyas Jamkhandi — Senior Full-Stack Engineer";
+const DESCRIPTION =
+  "Senior full-stack engineer in Bangalore. Production LLM and agent systems at Tracxn; sole engineer of a live B2B compliance platform before that. Co-founder of TeachPad (2,000+ users) and builder of StoreScope.";
+
 export const metadata: Metadata = {
-  title: "Shreyas Jamkhandi — Full-Stack Engineer",
-  description:
-    "Full-stack engineer building products at startups. Remote-first, result-oriented, shipping fast.",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  // Only favicon.ico exists in /public — do not reference icons that 404.
+  icons: { icon: "/favicon.ico" },
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "Shreyas Jamkhandi",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/shreyas.jpg",
+        width: 639,
+        height: 640,
+        alt: "Shreyas Jamkhandi",
+      },
+    ],
+  },
+  twitter: {
+    // The only image on the site is a square portrait, so a summary card renders
+    // it correctly; summary_large_image would crop it into a letterbox.
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: "@shreyxs",
+    images: ["/shreyas.jpg"],
   },
 };
 

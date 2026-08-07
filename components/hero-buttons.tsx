@@ -43,6 +43,22 @@ export function HeroButtons() {
           Get in Touch
         </Link>
       </Button>
+      <Button
+        asChild
+        variant="ghost"
+        size="lg"
+        // The ghost variant paints the hover background with --accent (brown), so the
+        // label has to flip to white — its default hover colour sits on the same hue.
+        className="rounded-md px-7 font-medium text-muted-foreground transition-all hover:bg-accent hover:text-white"
+      >
+        <a
+          href="/shreyas-jamkhandi-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Résumé
+        </a>
+      </Button>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Home() {
               {/* Text — first on desktop */}
               <div className="w-full md:w-3/5">
                 <p className="mb-5 font-mono text-xs tracking-[0.2em] text-primary uppercase">
-                  Full-Stack Engineer
+                  Senior Full-Stack Engineer
                 </p>
                 <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                   Shreyas
@@ -26,8 +26,9 @@ export default function Home() {
                   Jamkhandi
                 </h1>
                 <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  I help startups cut noise, ship faster, and build systems that
-                  actually work. First-principles thinking meets AI fire-power.
+                  I ship whole systems — the interface, the services behind it,
+                  and the infrastructure underneath. Lately that means
+                  production LLM and agent systems.
                 </p>
                 <div className="mt-8">
                   <HeroButtons />
@@ -66,10 +67,10 @@ export default function Home() {
 
             <div className="mx-auto max-w-3xl space-y-6">
               <p className="text-base leading-relaxed text-foreground/85 sm:text-lg">
-                {`I'm a full-stack developer based in Bangalore, working fully remote. I started out freelancing while in college — building end-to-end solutions and learning how to ship fast without cutting corners. After graduating with a degree in Computer Science, I joined Relso as their first engineering hire, where I led development from scratch and learned what it takes to build real products under startup constraints.`}
+                {`I'm a full-stack engineer based in Bangalore. I started out freelancing in college, then joined RELSO as their first engineering hire — leading a two-person team, fully remote with a US client, and shipping a production agent that worked across Zoho CRM and Shopify. After that I spent ten months as the sole engineer at GST Manager, a B2B compliance platform: two React apps, the Python and Node services behind them, an 87-model Postgres schema, and the AWS infrastructure it all ran on.`}
               </p>
               <p className="text-base leading-relaxed text-foreground/85 sm:text-lg">
-                {`Today, I work at GST Manager, where I own everything on the tech side — from internal tools to client-facing products — keeping things reliable, fast, and simple. I use AI tools to stay quick on my feet and build with clarity, not chaos.`}
+                {`Today I'm a Senior Software Engineer at Tracxn, working on production LLM and agent systems. Alongside that I co-founded TeachPad, an AI teaching-prep SaaS now past 2,000 users, and built and published StoreScope on the Shopify App Store on my own. I lean on AI tooling heavily — Claude Code is a daily driver — but the architecture calls and the trade-offs are mine to defend.`}
               </p>
             </div>
           </div>
@@ -92,73 +93,66 @@ export default function Home() {
               with AI copilots that cut ramp-up time to near-zero.
             </p>
 
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-              {/* Core */}
-              <div>
-                <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
-                  Core Stack
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "JavaScript / TypeScript",
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
+              {[
+                {
+                  title: "Core Stack",
+                  items: [
+                    "TypeScript / JavaScript",
+                    "Python",
                     "React & Next.js",
                     "Node.js & Express",
                     "TailwindCSS",
-                    "SQL & NoSQL",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 text-sm text-foreground/80"
-                    >
-                      <span className="block size-1 rounded-full bg-primary/60" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Integrations */}
-              <div>
-                <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
-                  Integrations
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Shopify & Zoho",
-                    "REST & GraphQL",
-                    "Third-party APIs",
-                    "Payment Gateways",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 text-sm text-foreground/80"
-                    >
-                      <span className="block size-1 rounded-full bg-primary/60" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Infra */}
-              <div>
-                <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
-                  Infrastructure
-                </h3>
-                <ul className="space-y-3">
-                  {["Docker", "AWS", "Kubernetes", "CI/CD Pipelines"].map(
-                    (item) => (
+                  ],
+                },
+                {
+                  title: "Backend & Data",
+                  items: [
+                    "FastAPI (async)",
+                    "PostgreSQL & Prisma",
+                    "Redis",
+                    "Temporal",
+                    "Firebase & Supabase",
+                  ],
+                },
+                {
+                  title: "AI & Agents",
+                  items: [
+                    "Tool-calling agents",
+                    "RAG & vector search",
+                    "LangGraph",
+                    "Evals & regression in CI",
+                    "Claude · Gemini · OpenAI",
+                  ],
+                },
+                {
+                  title: "Infrastructure",
+                  items: [
+                    "AWS (EC2, RDS, Lambda)",
+                    "Docker",
+                    "GitHub Actions CI/CD",
+                    "Health-gated deploys",
+                    "Sentry & structured logs",
+                  ],
+                },
+              ].map(({ title, items }) => (
+                <div key={title}>
+                  <h3 className="mb-5 font-mono text-xs tracking-[0.15em] text-primary uppercase">
+                    {title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {items.map((item) => (
                       <li
                         key={item}
                         className="flex items-center gap-3 text-sm text-foreground/80"
                       >
-                        <span className="block size-1 rounded-full bg-primary/60" />
+                        <span className="block size-1 shrink-0 rounded-full bg-primary/60" />
                         {item}
                       </li>
-                    )
-                  )}
-                </ul>
-              </div>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -177,91 +171,199 @@ export default function Home() {
             </h2>
 
             <div className="mx-auto max-w-3xl space-y-16">
-              {/* GST Manager */}
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-[200px_1fr] md:gap-10">
-                <div className="space-y-1">
-                  <p className="font-mono text-xs tracking-wider text-muted-foreground">
-                    Oct 2025 &mdash; Present
-                  </p>
-                  <p className="font-mono text-xs text-muted-foreground">
-                    <DynamicTenure startDate="2025-10-01" className="text-xs" />
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold sm:text-xl">
-                    Tech Lead
-                  </h3>
-                  <p className="mb-4 text-sm text-primary">
-                    <a
-                      href="https://gstmanager.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors hover:text-primary/80"
-                    >
-                      GST Manager
-                    </a>
-                  </p>
-                  <ul className="space-y-2.5">
-                    {[
-                      "Own all core systems — internal tools and client-facing products.",
-                      "Build fast, reliable solutions that keep the business running smoothly.",
-                      "Automate repetitive processes and improve operational workflows.",
-                      "Work closely with leadership to align tech decisions with business goals.",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80"
-                      >
-                        <span className="mt-2 block size-1 shrink-0 rounded-full bg-primary/50" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              {[
+                {
+                  period: "Jul 2026 — Present",
+                  // Counts up from the joining date so the current role stays accurate.
+                  tenureStart: "2026-07-20",
+                  tenure: null,
+                  role: "Senior Software Engineer",
+                  company: "Tracxn",
+                  href: "https://tracxn.com",
+                  bullets: [
+                    "Work on production LLM and agent systems on the customer-facing product surface.",
+                    "Agentic retrieval and synthesis over a large proprietary dataset, served at product scale.",
+                  ],
+                },
+                {
+                  period: "Oct 2025 — Jul 2026",
+                  tenureStart: null,
+                  tenure: "10 months",
+                  role: "Sole Engineer & Technical Lead",
+                  company: "GST Manager",
+                  href: "https://gstmanager.com",
+                  bullets: [
+                    "Sole engineer on a live B2B compliance platform — two React/Next.js apps, the async FastAPI and Node.js services behind them, and the AWS infrastructure and CI/CD that shipped them.",
+                    "Built the system of record: 87-model event-sourced PostgreSQL with an immutable audit log, multi-tenant RBAC, and a CI-enforced write path.",
+                    "Shipped a Claude tool-calling agent with 60+ tools that executes real operations against production — human approval on every write, and an eval harness gating each prompt and model change in CI.",
+                    "Durable Temporal workflows, CQRS read models on Redis, and live chat across both portals over SSE.",
+                  ],
+                },
+                {
+                  period: "Mar 2024 — Sep 2025",
+                  tenureStart: null,
+                  tenure: "1 year 7 months",
+                  role: "Tech Lead",
+                  company: "RELSO",
+                  href: null,
+                  bullets: [
+                    "Led a two-engineer team — architecture, standards, and code reviews — fully remote with a US team.",
+                    "Built a production LangGraph agent that answers live inventory questions and executes writes across Zoho CRM and Shopify.",
+                    "Shipped the company's Shopify storefront front to back.",
+                  ],
+                },
+              ].map(
+                (
+                  { period, tenureStart, tenure, role, company, href, bullets },
+                  index
+                ) => (
+                  <div key={company}>
+                    {index > 0 && (
+                      <div className="mx-auto mb-16 w-8 border-t border-border" />
+                    )}
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-[200px_1fr] md:gap-10">
+                      <div className="space-y-1">
+                        <p className="font-mono text-xs tracking-wider text-muted-foreground">
+                          {period}
+                        </p>
+                        <p className="font-mono text-xs text-muted-foreground">
+                          {tenureStart ? (
+                            <DynamicTenure
+                              startDate={tenureStart}
+                              className="text-xs"
+                            />
+                          ) : (
+                            tenure
+                          )}
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-display text-lg font-bold sm:text-xl">
+                          {role}
+                        </h3>
+                        <p className="mb-4 text-sm text-primary">
+                          {href ? (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="transition-colors hover:text-primary/80"
+                            >
+                              {company}
+                            </a>
+                          ) : (
+                            company
+                          )}
+                        </p>
+                        <ul className="space-y-2.5">
+                          {bullets.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80"
+                            >
+                              <span className="mt-2 block size-1 shrink-0 rounded-full bg-primary/50" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </section>
 
-              {/* Divider */}
-              <div className="mx-auto w-8 border-t border-border" />
+        {/* ── Projects ─────────────────────────────────────────── */}
+        <section
+          id="projects"
+          className="border-t border-border/60 bg-card py-20 sm:py-28"
+        >
+          <div className="container mx-auto px-4">
+            <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
+              Built &amp; Shipped
+            </p>
+            <h2 className="mb-4 text-center font-display text-2xl font-bold md:text-3xl">
+              Things I Own
+            </h2>
+            <p className="mx-auto mb-16 max-w-2xl text-center text-base text-muted-foreground">
+              Products I started myself and still run — both live, both
+              something you can go use right now.
+            </p>
 
-              {/* Relso */}
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-[200px_1fr] md:gap-10">
-                <div className="space-y-1">
-                  <p className="font-mono text-xs tracking-wider text-muted-foreground">
-                    Mar 2024 &mdash; Oct 2025
-                  </p>
-                  <p className="font-mono text-xs text-muted-foreground">
-                    1 year 8 months
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold sm:text-xl">
-                    Tech Lead
-                  </h3>
-                  <p className="mb-4 text-sm text-primary">Relso</p>
-                  <ul className="space-y-2.5">
-                    {[
-                      "Led development on Relso's primary web platforms, fully remote.",
-                      "Unified multiple projects under one Turborepo monorepo for scalability.",
-                      "Built modern UI components, integrated APIs, and enhanced product workflows.",
-                      "Streamlined customer acquisition and improved data accuracy.",
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80"
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+              {[
+                {
+                  name: "TeachPad",
+                  role: "Co-Founder & Engineer",
+                  period: "Apr 2025 — Present",
+                  href: "https://teachpad.in",
+                  linkLabel: "teachpad.in",
+                  blurb:
+                    "AI teaching-prep SaaS I co-founded and still run, now past 2,000 users. I own the backend: async FastAPI on PostgreSQL and Supabase, a RAG pipeline over Pinecone and Gemini that grounds every generation in real source material, plus usage quotas and Razorpay billing.",
+                  stack: ["FastAPI", "PostgreSQL", "Pinecone", "RAG", "Razorpay"],
+                },
+                {
+                  name: "StoreScope",
+                  role: "Founder & Sole Engineer",
+                  period: "Jun 2025 — Present",
+                  href: "https://apps.shopify.com/storescope",
+                  linkLabel: "Shopify App Store",
+                  blurb:
+                    "Real-time customer-journey and abandonment analytics for Shopify merchants — taken from an idea to a published App Store listing solo. High-throughput event ingestion, OAuth install flow, and usage-tiered billing with per-store quota enforcement at the API Gateway edge.",
+                  stack: ["Shopify API", "AWS Amplify", "API Gateway", "OAuth"],
+                },
+              ].map(
+                ({ name, role, period, href, linkLabel, blurb, stack }) => (
+                  <div
+                    key={name}
+                    className="flex flex-col rounded-sm border border-border/60 bg-background p-6 sm:p-8"
+                  >
+                    <div className="mb-4 flex items-baseline justify-between gap-4">
+                      <h3 className="font-display text-lg font-bold sm:text-xl">
+                        {name}
+                      </h3>
+                      <p className="shrink-0 font-mono text-xs text-muted-foreground">
+                        {period}
+                      </p>
+                    </div>
+                    <p className="mb-4 font-mono text-xs tracking-[0.1em] text-primary uppercase">
+                      {role}
+                    </p>
+                    <p className="mb-6 text-sm leading-relaxed text-foreground/80">
+                      {blurb}
+                    </p>
+                    <div className="mt-auto space-y-5">
+                      <div className="flex flex-wrap gap-2">
+                        {stack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-sm border border-border/70 px-2 py-1 font-mono text-[11px] text-muted-foreground"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                       >
-                        <span className="mt-2 block size-1 shrink-0 rounded-full bg-primary/50" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                        {linkLabel}
+                        <span aria-hidden="true">&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </section>
 
         {/* ── Operating Principles ─────────────────────────────── */}
-        <section className="border-t border-border/60 bg-card py-20 sm:py-28">
+        <section className="border-t border-border/60 py-20 sm:py-28">
           <div className="container mx-auto px-4">
             <p className="mb-3 text-center font-mono text-xs tracking-[0.2em] text-primary uppercase">
               How I Work
@@ -306,10 +408,9 @@ export default function Home() {
                     {`Have a problem worth solving?`}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Based in Bangalore, working remote. Always open to
-                    discussing new projects, creative ideas, or
-                    opportunities&nbsp;&mdash; especially ones that move fast
-                    and break the right things.
+                    Based in Bangalore, open to remote. Always up for a
+                    conversation about hard systems problems, new
+                    products&nbsp;&mdash; or a role where the ownership is real.
                   </p>
                 </div>
 
