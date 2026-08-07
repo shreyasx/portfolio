@@ -10,6 +10,57 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// The site is served from shreyasx.netlify.app. The previous list allowed only
+// shreyas.studio, which has since lapsed and now redirects to a parking page —
+// so every submission from the live site was being rejected with a 403.
+// Extra hosts (a future custom domain) can be added via CONTACT_ALLOWED_HOSTS.
+const ALLOWED_HOSTS = new Set(
+  [
+    "shreyasx.netlify.app",
+    ...(process.env.CONTACT_ALLOWED_HOSTS?.split(",") ?? []),
+    ...(process.env.NODE_ENV === "development"
+      ? ["localhost:3000", "127.0.0.1:3000"]
+      : []),
+  ]
+    .map((host) => host.trim().toLowerCase())
+    .filter(Boolean)
+);
+
+function isAllowedHost(host: string | null | undefined): boolean {
+  if (!host) return false;
+
+  const normalized = host.toLowerCase();
+
+  // Netlify branch and deploy-preview builds are served as
+  // <context>--shreyasx.netlify.app, so accept those too.
+  return (
+    ALLOWED_HOSTS.has(normalized) ||
+    normalized.endsWith("--shreyasx.netlify.app")
+  );
+}
+
+// Origin and Referer carry a full URL; compare on the parsed host so a value
+// like "evil-shreyasx.netlify.app.attacker.com" cannot pass a substring test.
+function hostFromUrl(value: string | null): string | null {
+  if (!value) return null;
+
+  try {
+    return new URL(value).host;
+  } catch {
+    return null;
+  }
+}
+
+// Interpolated into the HTML mail body below.
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 // Helper function to get user's IP address
 function getClientIP(request: NextRequest): string {
   // Check various headers for the real IP
@@ -95,32 +146,14 @@ async function getLocationFromIP(ip: string) {
 }
 
 export async function POST(request: NextRequest) {
-  // Check if request is from allowed domain
-  const origin = request.headers.get("origin");
-  const referer = request.headers.get("referer");
-  const host = request.headers.get("host");
+  // Check the request actually came from this site. Browsers send Origin on every
+  // cross-site *and* same-site POST, so it is the real signal; Referer is the
+  // fallback. The old code also accepted a matching Host header, which any direct
+  // request to the site satisfies — that made the check trivially bypassable.
+  const originHost = hostFromUrl(request.headers.get("origin"));
+  const refererHost = hostFromUrl(request.headers.get("referer"));
 
-  const allowedDomains = ["shreyas.studio", "www.shreyas.studio"];
-  const allowedHosts = [...allowedDomains];
-
-  // For local development
-  if (process.env.NODE_ENV === "development") {
-    allowedHosts.push("localhost:3000");
-  }
-
-  const isAllowedOrigin = origin
-    ? allowedDomains.some((domain) => origin.includes(domain))
-    : false;
-
-  const isAllowedReferer = referer
-    ? allowedDomains.some((domain) => referer.includes(domain))
-    : false;
-
-  const isAllowedHost = host
-    ? allowedHosts.some((allowedHost) => host.includes(allowedHost))
-    : false;
-
-  if (!isAllowedOrigin && !isAllowedReferer && !isAllowedHost) {
+  if (!isAllowedHost(originHost) && !isAllowedHost(refererHost)) {
     return NextResponse.json(
       { message: "Unauthorized request origin" },
       { status: 403 }
@@ -135,8 +168,16 @@ export async function POST(request: NextRequest) {
     const clientIP = getClientIP(request);
     const location = await getLocationFromIP(clientIP);
 
-    // Validate required fields
-    if (!name || !email || !message) {
+    // Validate required fields. The type check matters: everything below calls
+    // string methods on these, so a JSON number or object would throw a 500.
+    if (
+      typeof name !== "string" ||
+      typeof email !== "string" ||
+      typeof message !== "string" ||
+      !name.trim() ||
+      !email.trim() ||
+      !message.trim()
+    ) {
       return NextResponse.json(
         { message: "Name, email, and message are required" },
         { status: 400 }
@@ -168,8 +209,11 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: `shreyasx@protonmail.ch`, // Send to yourself
-      subject: `Contact Form: Message from ${name}`,
-      replyTo: `shreyasx@protonmail.ch`,
+      // Strip CR/LF so a crafted name cannot inject extra mail headers.
+      subject: `Contact Form: Message from ${name.replace(/[\r\n]+/g, " ").slice(0, 120)}`,
+      // Reply goes to whoever filled in the form — it used to point back at the
+      // recipient, so hitting reply just mailed yourself.
+      replyTo: email,
       text: `
         Name: ${name}
         Email: ${email}
@@ -181,12 +225,12 @@ export async function POST(request: NextRequest) {
       `,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Location:</strong> ${locationDetails}</p>
-        <p><strong>IP Address:</strong> ${clientIP}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Location:</strong> ${escapeHtml(locationDetails)}</p>
+        <p><strong>IP Address:</strong> ${escapeHtml(clientIP)}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
       `,
     };
 
